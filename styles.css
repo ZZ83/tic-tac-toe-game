@@ -346,4 +346,10 @@ html {
   }
 }
 
+.wrapper {
+  width: 80%;
+  max-width: 28.75rem;
+  margin: 0 auto;
+}
+
 /*# sourceMappingURL=styles.css.map */

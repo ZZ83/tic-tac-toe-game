@@ -1,0 +1,7 @@
+@use '../abstracts' as *;
+
+.wrapper {
+    width: 80%;
+    max-width: rem(460px);
+    margin: 0 auto;
+}
