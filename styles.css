@@ -307,6 +307,7 @@ template {
   display: none;
 }
 
+/********************** FLEXBOX PLACHOLDERS **********************/
 *,
 *:after,
 *:before {
@@ -315,21 +316,7 @@ template {
 
 html {
   font-family: "Outfit", sans-serif;
+  background-color: #1A2A33;
 }
-
-:root {
-  --font-family-kumbh-sans: "Kumbh Sans", sans-serif;
-  --font-family-roboto-slab: "Roboto Slab", serif;
-  --font-family-space-mono: "Space Mono", monospace;
-  --font-weight--regular: 400;
-  --font-weight--bold: 700;
-  --white: #FFFFFF;
-  --mirage: #161932;
-  --port-gore: #1E213F;
-  --periwinkle: #D7E0FF;
-  --white-lilac: #EFF1FA;
-}
-
-/********************** FLEXBOX PLACHOLDERS **********************/
 
 /*# sourceMappingURL=styles.css.map */
