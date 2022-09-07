@@ -1,0 +1,50 @@
+@use '../abstracts' as *;
+
+.game-header {
+    @extend %flex;
+    @extend %flex-ai-c;
+    margin-top: rem(24px);
+    justify-content: space-between;
+    height: rem(40px);
+    // background-color: orange;
+    @include mq(medium) {
+        height: rem(52px);
+        margin-top: rem(201px);
+    }
+ 
+}
+
+.current-turn {
+    @extend %text-body;
+    @extend %bg-semi-dark;
+    @extend %flex-hv-center;
+    @include mq(medium) {
+        width: rem(140px);
+        height: rem(52px);
+    }
+    width:  rem(96px);
+    height: rem(40px);
+    fill: $silver;
+    font-weight: 700;
+    border-radius: 5px;
+    box-shadow: inset 0px -4px 0px #10212A;
+    padding-bottom: rem(4px);
+    &__mark {
+        margin-right: rem(14px);
+    }
+}
+
+.game-reset {
+    @include mq(medium) {
+        width:  rem(52px);
+        height: rem(52px);
+    }
+    width:  rem(40px);
+    height: rem(40px);
+    border-radius: 5px;
+    box-shadow: inset 0px -4px 0px #6B8997;
+    background-color: $silver;
+    &:hover {
+        background-color: $silver-hover;
+    } 
+}

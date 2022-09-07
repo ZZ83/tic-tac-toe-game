@@ -308,15 +308,19 @@ template {
 }
 
 /********************** FLEXBOX PLACHOLDERS **********************/
-.menu-header {
+.game-header, .menu-header {
   display: flex;
+}
+
+.game-header {
+  align-items: center;
 }
 
 .menu-header {
   justify-content: center;
 }
 
-.mark-selection__inner, .mark-selection__x, .mark-selection__o {
+.current-turn, .mark-selection__inner, .mark-selection__x, .mark-selection__o {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -333,7 +337,7 @@ h4 {
   letter-spacing: 0.0625rem;
 }
 
-p {
+.current-turn, p {
   font-size: 0.875rem;
   letter-spacing: 0.05rem;
 }
@@ -369,7 +373,7 @@ p {
   background-color: #F2B137;
 }
 
-.mark-selection {
+.current-turn, .mark-selection {
   background-color: #1F3641;
 }
 
@@ -485,8 +489,56 @@ button {
 }
 
 .wrapper {
-  width: 80%;
+  width: 85%;
   max-width: 28.75rem;
+}
+
+.game-header {
+  margin-top: 1.5rem;
+  justify-content: space-between;
+  height: 2.5rem;
+}
+@media (min-width: 768px) {
+  .game-header {
+    height: 3.25rem;
+    margin-top: 12.5625rem;
+  }
+}
+
+.current-turn {
+  width: 6rem;
+  height: 2.5rem;
+  fill: #A8BFC9;
+  font-weight: 700;
+  border-radius: 5px;
+  box-shadow: inset 0px -4px 0px #10212A;
+  padding-bottom: 0.25rem;
+}
+@media (min-width: 768px) {
+  .current-turn {
+    width: 8.75rem;
+    height: 3.25rem;
+  }
+}
+.current-turn__mark {
+  margin-right: 0.875rem;
+}
+
+.game-reset {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 5px;
+  box-shadow: inset 0px -4px 0px #6B8997;
+  background-color: #A8BFC9;
+}
+@media (min-width: 768px) {
+  .game-reset {
+    width: 3.25rem;
+    height: 3.25rem;
+  }
+}
+.game-reset:hover {
+  background-color: #DBE8ED;
 }
 
 /*# sourceMappingURL=styles.css.map */
