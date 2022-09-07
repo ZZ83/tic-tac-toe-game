@@ -1,21 +1,21 @@
 @use '../abstracts' as *;
 
 .mark-selection {
+    @extend %bs-green;
     color: $silver;
     height: rem(205px);
     margin-top: rem(33px);
     border-radius: rem(15px);
     background-color: $semi-dark-navy;
-    box-shadow: inset 0px -8px 0px #10212A;
     &__heading {
         padding: rem(24px) 0;
     }
     &__inner {
+        @extend %center;
         @extend %br-10;
         @extend %flex-hv-center;
         width: 85%;
         height: rem(72px);
-        margin: 0 auto;
         background-color: $dark-navy;
     }
     &__x,
@@ -36,6 +36,7 @@
     }
 }
 
+// Selected State
 .selected {
     fill: $dark-navy;
     background-color: $silver;

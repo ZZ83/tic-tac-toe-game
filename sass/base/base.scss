@@ -23,3 +23,11 @@ h4 {
 p {
     @extend %text-body; 
 }
+
+button {
+    @extend %br-10;
+    cursor: pointer;
+    font-weight: 700;
+    border: none;
+    text-transform: uppercase;  
+}

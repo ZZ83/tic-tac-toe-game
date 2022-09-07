@@ -1,1 +1,36 @@
 @use '../abstracts' as *;
+
+.btn-yellow {
+    @extend %bs-yellow;
+    background-color: $light-yellow;
+    &:hover {
+        background-color: $light-yellow-hover;
+    }
+}
+
+.btn-blue {
+    @extend %bs-blue;
+    background-color: $light-blue;
+    &:hover {
+        background-color: $light-blue-hover;
+    }
+}
+
+.new-game-btn {
+    @extend %text-s;
+    @include mq(medium) {
+        height: rem(67px);
+    }
+    display: block;
+    width: 100%;
+    height: rem(56px);
+    color: $dark-navy;
+    padding-bottom: rem(10px);
+    &--cpu {
+        @include mq(medium) {
+            margin-top: rem(40px);
+        }
+        margin-top:    rem(32px);
+        margin-bottom: rem(20px);
+    }
+}

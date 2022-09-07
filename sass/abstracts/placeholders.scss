@@ -1,4 +1,5 @@
 @use 'functions' as *;
+@use 'variables' as *;
 
 /********************** FLEXBOX PLACHOLDERS **********************/
 %flex {
@@ -27,7 +28,6 @@
     justify-content: center;
 }
 
-
 /********************** TYPOGRAPHY PLACHOLDERS **********************/
 %text-l {
     font-size: rem(40px);
@@ -54,9 +54,25 @@
     letter-spacing: rem(0.8px);
 }
 
-
 /********************** BORDER RADIUS PLACHOLDERS **********************/
-
 %br-10 {
     border-radius: rem(10px);
+}
+
+/********************** BOX SHADOW PLACHOLDERS **********************/
+%bs-green {
+    box-shadow: inset 0px -8px 0px #10212A;
+}
+
+%bs-yellow {
+    box-shadow: inset 0px -8px 0px #CC8B13;
+}
+
+%bs-blue {
+    box-shadow: inset 0px -8px 0px #118C87;
+}
+
+/********************** LAYOUT PLACHOLDERS **********************/
+%center {
+    margin: 0 auto;
 }
