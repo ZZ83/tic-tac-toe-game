@@ -308,6 +308,14 @@ template {
 }
 
 /********************** FLEXBOX PLACHOLDERS **********************/
+.menu-header {
+  display: flex;
+}
+
+.menu-header {
+  justify-content: center;
+}
+
 *,
 *:after,
 *:before {
@@ -322,6 +330,20 @@ html {
 .logo {
   width: 4.5rem;
   height: 2rem;
+}
+
+.menu-header {
+  margin-top: 7.4375rem;
+}
+@media (min-width: 768px) {
+  .menu-header {
+    margin-top: 17.3125rem;
+  }
+}
+@media (min-width: 1440px) {
+  .menu-header {
+    margin-top: 13.4375rem;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
