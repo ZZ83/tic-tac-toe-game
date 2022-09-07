@@ -316,6 +316,7 @@ template {
   justify-content: center;
 }
 
+/********************** TYPOGRAPHY PLACHOLDERS **********************/
 *,
 *:after,
 *:before {
@@ -323,6 +324,7 @@ template {
 }
 
 html {
+  text-align: center;
   font-family: "Outfit", sans-serif;
   background-color: #1A2A33;
 }
