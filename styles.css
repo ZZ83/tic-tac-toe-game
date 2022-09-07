@@ -313,6 +313,10 @@ template {
   box-sizing: border-box;
 }
 
+html {
+  font-family: "Outfit", sans-serif;
+}
+
 :root {
   --font-family-kumbh-sans: "Kumbh Sans", sans-serif;
   --font-family-roboto-slab: "Roboto Slab", serif;
