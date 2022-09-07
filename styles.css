@@ -332,6 +332,14 @@ html {
   height: 2rem;
 }
 
+.mark-selection {
+  color: #A8BFC9;
+  height: 12.8125rem;
+  border-radius: 0.9375rem;
+  background-color: #1F3641;
+  box-shadow: inset 0px -8px 0px #10212A;
+}
+
 .menu-header {
   margin-top: 7.4375rem;
 }

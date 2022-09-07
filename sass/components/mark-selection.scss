@@ -1,1 +1,9 @@
 @use '../abstracts' as *;
+
+.mark-selection {
+    color: $silver;
+    height: rem(205px);
+    border-radius: rem(15px);
+    background-color: $semi-dark-navy;
+    box-shadow: inset 0px -8px 0px #10212A;
+}
