@@ -72,6 +72,23 @@
     box-shadow: inset 0px -8px 0px #118C87;
 }
 
+/********************** BACKGROUND COLOR PLACHOLDERS **********************/
+%bg-blue {
+    background-color: $light-blue;
+}
+
+%bg-silver {
+    background-color: $silver;
+}
+
+%bg-yellow {
+    background-color: $light-yellow;
+}
+
+%bg-semi-dark {
+    background-color: $semi-dark-navy;
+}
+
 /********************** LAYOUT PLACHOLDERS **********************/
 %center {
     margin: 0 auto;

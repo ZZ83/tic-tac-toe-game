@@ -2,11 +2,10 @@
 
 .mark-selection {
     @extend %bs-green;
-    color: $silver;
+    @extend %bg-semi-dark;
     height: rem(205px);
     margin-top: rem(33px);
     border-radius: rem(15px);
-    background-color: $semi-dark-navy;
     &__heading {
         padding: rem(24px) 0;
     }
@@ -38,6 +37,6 @@
 
 // Selected State
 .selected {
+    @extend %bg-silver;
     fill: $dark-navy;
-    background-color: $silver;
 }

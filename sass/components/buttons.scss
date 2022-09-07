@@ -2,7 +2,7 @@
 
 .btn-yellow {
     @extend %bs-yellow;
-    background-color: $light-yellow;
+    @extend %bg-yellow;
     &:hover {
         background-color: $light-yellow-hover;
     }
@@ -10,7 +10,7 @@
 
 .btn-blue {
     @extend %bs-blue;
-    background-color: $light-blue;
+    @extend %bg-blue;
     &:hover {
         background-color: $light-blue-hover;
     }

@@ -356,6 +356,23 @@ p {
   box-shadow: inset 0px -8px 0px #118C87;
 }
 
+/********************** BACKGROUND COLOR PLACHOLDERS **********************/
+.btn-blue {
+  background-color: #31C3BD;
+}
+
+.selected {
+  background-color: #A8BFC9;
+}
+
+.btn-yellow {
+  background-color: #F2B137;
+}
+
+.mark-selection {
+  background-color: #1F3641;
+}
+
 /********************** LAYOUT PLACHOLDERS **********************/
 .wrapper, .mark-selection__inner {
   margin: 0 auto;
@@ -370,6 +387,7 @@ p {
 }
 
 body {
+  color: #A8BFC9;
   text-align: center;
   text-transform: uppercase;
   font-weight: 500;
@@ -378,22 +396,16 @@ body {
 }
 
 button {
+  border: none;
   cursor: pointer;
   font-weight: 700;
-  border: none;
   text-transform: uppercase;
 }
 
-.btn-yellow {
-  background-color: #F2B137;
-}
 .btn-yellow:hover {
   background-color: #FFC860;
 }
 
-.btn-blue {
-  background-color: #31C3BD;
-}
 .btn-blue:hover {
   background-color: #65E9E4;
 }
@@ -426,11 +438,9 @@ button {
 }
 
 .mark-selection {
-  color: #A8BFC9;
   height: 12.8125rem;
   margin-top: 2.0625rem;
   border-radius: 0.9375rem;
-  background-color: #1F3641;
 }
 .mark-selection__heading {
   padding: 1.5rem 0;
@@ -458,7 +468,6 @@ button {
 
 .selected {
   fill: #1A2A33;
-  background-color: #A8BFC9;
 }
 
 .menu-header {
