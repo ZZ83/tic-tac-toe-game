@@ -3,7 +3,40 @@
 .mark-selection {
     color: $silver;
     height: rem(205px);
+    margin-top: rem(33px);
     border-radius: rem(15px);
     background-color: $semi-dark-navy;
     box-shadow: inset 0px -8px 0px #10212A;
+    &__heading {
+        padding: rem(24px) 0;
+    }
+    &__inner {
+        @extend %br-10;
+        @extend %flex-hv-center;
+        width: 85%;
+        height: rem(72px);
+        margin: 0 auto;
+        background-color: $dark-navy;
+    }
+    &__x,
+    &__o {
+        @extend %br-10;
+        @extend %flex-hv-center;
+        width: 47%;
+        height: rem(54px);
+        fill: $silver;
+        cursor: pointer;
+    }
+    &__sub-heading {
+        opacity: 50%;
+        padding: rem(21px) 0; 
+    }
+    @include mq(medium) {
+        margin-top: rem(40px);
+    }
+}
+
+.selected {
+    fill: $dark-navy;
+    background-color: $silver;
 }

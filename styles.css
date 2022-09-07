@@ -316,15 +316,40 @@ template {
   justify-content: center;
 }
 
+.mark-selection__inner, .mark-selection__x, .mark-selection__o {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 /********************** TYPOGRAPHY PLACHOLDERS **********************/
+h4 {
+  font-size: 1rem;
+  letter-spacing: 0.0625rem;
+}
+
+p {
+  font-size: 0.875rem;
+  letter-spacing: 0.05rem;
+}
+
+/********************** BORDER RADIUS PLACHOLDERS **********************/
+.mark-selection__inner, .mark-selection__x, .mark-selection__o {
+  border-radius: 0.625rem;
+}
+
 *,
 *:after,
 *:before {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
-html {
+body {
   text-align: center;
+  text-transform: uppercase;
+  font-weight: 500;
   font-family: "Outfit", sans-serif;
   background-color: #1A2A33;
 }
@@ -337,9 +362,39 @@ html {
 .mark-selection {
   color: #A8BFC9;
   height: 12.8125rem;
+  margin-top: 2.0625rem;
   border-radius: 0.9375rem;
   background-color: #1F3641;
   box-shadow: inset 0px -8px 0px #10212A;
+}
+.mark-selection__heading {
+  padding: 1.5rem 0;
+}
+.mark-selection__inner {
+  width: 85%;
+  height: 4.5rem;
+  margin: 0 auto;
+  background-color: #1A2A33;
+}
+.mark-selection__x, .mark-selection__o {
+  width: 47%;
+  height: 3.375rem;
+  fill: #A8BFC9;
+  cursor: pointer;
+}
+.mark-selection__sub-heading {
+  opacity: 50%;
+  padding: 1.3125rem 0;
+}
+@media (min-width: 768px) {
+  .mark-selection {
+    margin-top: 2.5rem;
+  }
+}
+
+.selected {
+  fill: #1A2A33;
+  background-color: #A8BFC9;
 }
 
 .menu-header {

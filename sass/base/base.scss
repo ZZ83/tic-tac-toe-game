@@ -3,11 +3,23 @@
 *,
 *:after,
 *:before {
+    margin:  0;
+    padding: 0;
     box-sizing: border-box;
 }
 
-html {
+body {
     text-align: center;
+    text-transform: uppercase;
+    font-weight: 500;
     font-family: "Outfit", sans-serif;
     background-color: $dark-navy;
+}
+
+h4 {
+    @extend %text-xs;
+}
+
+p {
+    @extend %text-body; 
 }

@@ -1,3 +1,5 @@
+@use 'functions' as *;
+
 /********************** FLEXBOX PLACHOLDERS **********************/
 %flex {
     display: flex;
@@ -50,4 +52,11 @@
 %text-body {
     font-size: rem(14px);
     letter-spacing: rem(0.8px);
+}
+
+
+/********************** BORDER RADIUS PLACHOLDERS **********************/
+
+%br-10 {
+    border-radius: rem(10px);
 }
