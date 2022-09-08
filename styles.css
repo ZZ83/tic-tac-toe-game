@@ -308,16 +308,8 @@ template {
 }
 
 /********************** FLEXBOX PLACHOLDERS **********************/
-.game-header, .menu-header {
+.menu-header {
   display: flex;
-}
-
-.game-header {
-  align-items: center;
-}
-
-.game-header {
-  justify-content: space-between;
 }
 
 .menu-header {
@@ -554,20 +546,46 @@ button {
   max-width: 28.75rem;
 }
 
-.game-header {
-  height: 2.5rem;
+.game {
+  display: grid;
+  grid-template-rows: 2.5rem 20.5rem 4rem;
   margin-top: 1.5rem;
 }
 @media (min-width: 768px) {
-  .game-header {
-    height: 3.25rem;
+  .game {
+    grid-template-rows: 3.25rem 28.8125rem 4.5rem;
     margin-top: 12.5625rem;
   }
 }
 @media (min-width: 1440px) {
-  .game-header {
+  .game {
     margin-top: 8.6875rem;
   }
+}
+
+.game-header {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  background-color: aqua;
+}
+
+.game-board {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  margin-top: 4rem;
+  background-color: orange;
+}
+@media (min-width: 768px) {
+  .game-board {
+    margin-top: 1.25rem;
+  }
+}
+
+.game-stats {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  margin-top: 1.25rem;
+  background-color: gray;
 }
 
 /*# sourceMappingURL=styles.css.map */
