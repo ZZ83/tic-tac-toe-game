@@ -10,19 +10,6 @@
     }
 }
 
-.game-header {
-    height: rem(40px);
-    margin-bottom: rem(64px);
-    display: grid;
-    gap: 20px;
-    grid-template-columns: repeat(3, 1fr);
-    align-items: center;
-    @include mq(medium) {
-        height: rem(52px);
-        margin-bottom: rem(20px);
-    }
-}
-
 .game-stats {
     height: rem(64px);
     margin-top: rem(20px);

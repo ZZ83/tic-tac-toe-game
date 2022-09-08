@@ -573,6 +573,17 @@ button {
   }
 }
 
+.game-stats {
+  height: 4rem;
+  margin-top: 1.25rem;
+  background-color: gray;
+}
+@media (min-width: 768px) {
+  .game-stats {
+    height: 4.5rem;
+  }
+}
+
 .game-header {
   height: 2.5rem;
   margin-bottom: 4rem;
@@ -585,17 +596,6 @@ button {
   .game-header {
     height: 3.25rem;
     margin-bottom: 1.25rem;
-  }
-}
-
-.game-stats {
-  height: 4rem;
-  margin-top: 1.25rem;
-  background-color: gray;
-}
-@media (min-width: 768px) {
-  .game-stats {
-    height: 4.5rem;
   }
 }
 
