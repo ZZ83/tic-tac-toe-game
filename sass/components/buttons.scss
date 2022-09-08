@@ -34,3 +34,19 @@
         margin-bottom: rem(20px);
     }
 }
+
+
+.restart-btn {
+    @include mq(medium) {
+        width:  rem(52px);
+        height: rem(52px);
+    }
+    width:  rem(40px);
+    height: rem(40px);
+    border-radius: 5px;
+    box-shadow: inset 0px -4px 0px #6B8997;
+    background-color: $silver;
+    &:hover {
+        background-color: $silver-hover;
+    } 
+}

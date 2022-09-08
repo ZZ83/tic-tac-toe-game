@@ -440,6 +440,23 @@ button {
   }
 }
 
+.restart-btn {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 5px;
+  box-shadow: inset 0px -4px 0px #6B8997;
+  background-color: #A8BFC9;
+}
+@media (min-width: 768px) {
+  .restart-btn {
+    width: 3.25rem;
+    height: 3.25rem;
+  }
+}
+.restart-btn:hover {
+  background-color: #DBE8ED;
+}
+
 .logo {
   width: 4.5rem;
   height: 2rem;
