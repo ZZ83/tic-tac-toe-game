@@ -3,15 +3,16 @@
 .game-header {
     @extend %flex;
     @extend %flex-ai-c;
-    margin-top: rem(24px);
-    justify-content: space-between;
-    height: rem(40px);
-    // background-color: orange;
+    @extend %flex-jc-sb;
     @include mq(medium) {
         height: rem(52px);
         margin-top: rem(201px);
     }
- 
+    @include mq(large) {
+        margin-top: rem(139px);
+    }
+    height: rem(40px);
+    margin-top: rem(24px);
 }
 
 .current-turn {
@@ -21,6 +22,8 @@
     @include mq(medium) {
         width: rem(140px);
         height: rem(52px);
+        font-size: rem(16px);
+        letter-spacing: rem(1px);
     }
     width:  rem(96px);
     height: rem(40px);
@@ -30,7 +33,14 @@
     box-shadow: inset 0px -4px 0px #10212A;
     padding-bottom: rem(4px);
     &__mark {
-        margin-right: rem(14px);
+        @include mq(medium) {
+            width:  rem(20px);
+            height: rem(20px);
+            margin-right: rem(14px);
+        }
+        width:  rem(16px);
+        height: rem(16px);
+        margin-right: rem(10px);
     }
 }
 
