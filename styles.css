@@ -331,7 +331,7 @@ template {
 }
 
 /********************** TYPOGRAPHY PLACHOLDERS **********************/
-.new-game-btn {
+.btn-new-game {
   font-size: 1.25rem;
   letter-spacing: 0.078125rem;
 }
@@ -347,7 +347,7 @@ h4 {
 }
 
 /********************** BORDER RADIUS PLACHOLDERS **********************/
-.current-turn, .restart-btn {
+.current-turn, .btn-restart {
   border-radius: 0.3125rem;
 }
 
@@ -434,7 +434,7 @@ button {
   background-color: #DBE8ED;
 }
 
-.new-game-btn {
+.btn-new-game {
   display: block;
   width: 100%;
   height: 3.5rem;
@@ -442,26 +442,26 @@ button {
   padding-bottom: 0.625rem;
 }
 @media (min-width: 768px) {
-  .new-game-btn {
+  .btn-new-game {
     height: 4.1875rem;
   }
 }
-.new-game-btn--cpu {
+.btn-new-game--cpu {
   margin-top: 2rem;
   margin-bottom: 1.25rem;
 }
 @media (min-width: 768px) {
-  .new-game-btn--cpu {
+  .btn-new-game--cpu {
     margin-top: 2.5rem;
   }
 }
 
-.restart-btn {
+.btn-restart {
   width: 2.5rem;
   height: 2.5rem;
 }
 @media (min-width: 768px) {
-  .restart-btn {
+  .btn-restart {
     width: 3.25rem;
     height: 3.25rem;
     border-radius: 10px;

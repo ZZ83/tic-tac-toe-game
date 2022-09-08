@@ -24,7 +24,7 @@
     }
 }
 
-.new-game-btn {
+.btn-new-game {
     display: block;
     width: 100%;
     height: rem(56px);
@@ -43,8 +43,7 @@
     }
 }
 
-
-.restart-btn {
+.btn-restart {
     width:  rem(40px);
     height: rem(40px);
     @extend %br-5;
