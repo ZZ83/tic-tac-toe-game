@@ -543,7 +543,7 @@ button {
   }
 }
 
-.game-reset {
+.restart-btn {
   width: 2.5rem;
   height: 2.5rem;
   border-radius: 5px;
@@ -551,12 +551,12 @@ button {
   background-color: #A8BFC9;
 }
 @media (min-width: 768px) {
-  .game-reset {
+  .restart-btn {
     width: 3.25rem;
     height: 3.25rem;
   }
 }
-.game-reset:hover {
+.restart-btn:hover {
   background-color: #DBE8ED;
 }
 
