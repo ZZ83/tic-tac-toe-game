@@ -1,11 +1,11 @@
 @use '../abstracts' as *;
 
 .mark-selection {
+    height: rem(205px);
+    margin-top: rem(33px);
     @extend %br-15;
     @extend %bs-green;
     @extend %bg-semi-dark;
-    height: rem(205px);
-    margin-top: rem(33px);
     &__heading {
         padding: rem(24px) 0;
     }
@@ -37,6 +37,6 @@
 
 // Selected State
 .selected {
-    @extend %bg-silver;
     fill: $dark-navy;
+    @extend %bg-silver;
 }

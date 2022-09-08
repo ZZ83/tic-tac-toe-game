@@ -506,12 +506,12 @@ button {
 }
 
 .current-turn {
-  width: 6rem;
-  height: 2.5rem;
   fill: #A8BFC9;
   font-weight: 700;
-  box-shadow: inset 0px -4px 0px #10212A;
+  width: 6rem;
+  height: 2.5rem;
   padding-bottom: 0.25rem;
+  box-shadow: inset 0px -4px 0px #10212A;
 }
 @media (min-width: 768px) {
   .current-turn {

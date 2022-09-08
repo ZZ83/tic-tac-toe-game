@@ -25,32 +25,32 @@
 }
 
 .new-game-btn {
-    @extend %text-s;
-    @include mq(medium) {
-        height: rem(67px);
-    }
     display: block;
     width: 100%;
     height: rem(56px);
     color: $dark-navy;
     padding-bottom: rem(10px);
+    @extend %text-s;
+    @include mq(medium) {
+        height: rem(67px);
+    }
     &--cpu {
+        margin-top:    rem(32px);
+        margin-bottom: rem(20px);
         @include mq(medium) {
             margin-top: rem(40px);
         }
-        margin-top:    rem(32px);
-        margin-bottom: rem(20px);
     }
 }
 
 
 .restart-btn {
+    width:  rem(40px);
+    height: rem(40px);
     @extend %br-5;
     @include mq(medium) {
         width:  rem(52px);
         height: rem(52px);
         border-radius: 10px;
     }
-    width:  rem(40px);
-    height: rem(40px);
 }
