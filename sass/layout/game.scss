@@ -1,11 +1,8 @@
 @use '../abstracts' as *;
 
 .game {
-    display: grid;
-    grid-template-rows: rem(40px) rem(328px) rem(64px);
     margin-top: rem(24px);
     @include mq(medium) {
-        grid-template-rows: rem(52px) rem(461px) rem(72px);
         margin-top: rem(201px);
     }
     @include mq(large) {
@@ -14,24 +11,30 @@
 }
 
 .game-header {
-    grid-column-start: 1;
-    grid-column-end:   4;
-    background-color: aqua;
-}
-
-.game-board {
-    grid-column-start: 1;
-    grid-column-end:   4;
-    margin-top: rem(64px);
-    background-color: orange;
+    height: rem(40px);
+    margin-bottom: rem(64px);
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
     @include mq(medium) {
-        margin-top: rem(20px);
+        height: rem(52px);
+        margin-bottom: rem(20px);
     }
 }
 
 .game-stats {
-    grid-column-start: 1;
-    grid-column-end:   4;
+    height: rem(64px);
     margin-top: rem(20px);
     background-color: gray;
+    @include mq(medium) {
+        height: rem(72px);
+    }
 }
+
+
+
+
+
+
+

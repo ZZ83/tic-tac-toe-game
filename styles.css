@@ -316,7 +316,7 @@ template {
   justify-content: center;
 }
 
-.current-turn, .mark-selection__inner, .mark-selection__x, .mark-selection__o {
+.game-board__item, .current-turn, .mark-selection__inner, .mark-selection__x, .mark-selection__o {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -343,7 +343,7 @@ h4 {
   border-radius: 0.3125rem;
 }
 
-.mark-selection__inner, .mark-selection__x, .mark-selection__o, button {
+.game-board__item, .mark-selection__inner, .mark-selection__x, .mark-selection__o, button {
   border-radius: 0.625rem;
 }
 
@@ -352,7 +352,7 @@ h4 {
 }
 
 /********************** BOX SHADOW PLACHOLDERS **********************/
-.mark-selection {
+.game-board__item, .mark-selection {
   box-shadow: inset 0px -8px 0px #10212A;
 }
 
@@ -381,7 +381,7 @@ h4 {
   background-color: #F2B137;
 }
 
-.current-turn, .mark-selection {
+.game-board__item, .current-turn, .mark-selection {
   background-color: #1F3641;
 }
 
@@ -451,6 +451,7 @@ button {
 .btn-restart {
   width: 2.5rem;
   height: 2.5rem;
+  margin-left: auto;
 }
 @media (min-width: 768px) {
   .btn-restart {
@@ -500,7 +501,6 @@ button {
 .current-turn {
   fill: #A8BFC9;
   font-weight: 700;
-  width: 6rem;
   height: 2.5rem;
   padding-bottom: 0.25rem;
   box-shadow: inset 0px -4px 0px #10212A;
@@ -527,6 +527,19 @@ button {
   }
 }
 
+.game-board {
+  aspect-ratio: 1/1;
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(3, 1fr);
+  cursor: pointer;
+}
+@media (min-width: 768px) {
+  .game-board__item {
+    border-radius: 0.9375rem;
+  }
+}
+
 .menu-header {
   margin-top: 7.4375rem;
 }
@@ -542,18 +555,15 @@ button {
 }
 
 .wrapper {
-  width: 85%;
+  width: 90%;
   max-width: 28.75rem;
 }
 
 .game {
-  display: grid;
-  grid-template-rows: 2.5rem 20.5rem 4rem;
   margin-top: 1.5rem;
 }
 @media (min-width: 768px) {
   .game {
-    grid-template-rows: 3.25rem 28.8125rem 4.5rem;
     margin-top: 12.5625rem;
   }
 }
@@ -564,28 +574,29 @@ button {
 }
 
 .game-header {
-  grid-column-start: 1;
-  grid-column-end: 4;
-  background-color: aqua;
-}
-
-.game-board {
-  grid-column-start: 1;
-  grid-column-end: 4;
-  margin-top: 4rem;
-  background-color: orange;
+  height: 2.5rem;
+  margin-bottom: 4rem;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
 }
 @media (min-width: 768px) {
-  .game-board {
-    margin-top: 1.25rem;
+  .game-header {
+    height: 3.25rem;
+    margin-bottom: 1.25rem;
   }
 }
 
 .game-stats {
-  grid-column-start: 1;
-  grid-column-end: 4;
+  height: 4rem;
   margin-top: 1.25rem;
   background-color: gray;
+}
+@media (min-width: 768px) {
+  .game-stats {
+    height: 4.5rem;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */

@@ -1,2 +1,18 @@
 @use '../abstracts' as *;
 
+.game-board {
+    aspect-ratio: 1 / 1;
+    display: grid;
+    gap: rem(20px);
+    grid-template-columns: repeat(3, 1fr);
+    cursor: pointer;
+    &__item {
+        @extend %br-10;
+        @extend %bs-green;
+        @extend %bg-semi-dark;
+        @extend %flex-hv-center;
+        @include mq(medium) {
+            border-radius: rem(15px);
+        }
+    }
+}
