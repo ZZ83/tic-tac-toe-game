@@ -1,6 +1,8 @@
 @use '../abstracts' as *;
 
 .game-header {
+    height: rem(40px);
+    margin-top: rem(24px);
     @extend %flex;
     @extend %flex-ai-c;
     @extend %flex-jc-sb;
@@ -11,6 +13,4 @@
     @include mq(large) {
         margin-top: rem(139px);
     }
-    height: rem(40px);
-    margin-top: rem(24px);
 }
