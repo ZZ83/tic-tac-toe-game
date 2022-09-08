@@ -14,33 +14,3 @@
     height: rem(40px);
     margin-top: rem(24px);
 }
-
-.current-turn {
-    @extend %br-5;
-    @extend %text-body;
-    @extend %bg-semi-dark;
-    @extend %flex-hv-center;
-    @include mq(medium) {
-        width: rem(140px);
-        height: rem(52px);
-        font-size: rem(16px);
-        letter-spacing: rem(1px);
-        border-radius: 10px;
-    }
-    width:  rem(96px);
-    height: rem(40px);
-    fill: $silver;
-    font-weight: 700;
-    box-shadow: inset 0px -4px 0px #10212A;
-    padding-bottom: rem(4px);
-    &__mark {
-        @include mq(medium) {
-            width:  rem(20px);
-            height: rem(20px);
-            margin-right: rem(14px);
-        }
-        width:  rem(16px);
-        height: rem(16px);
-        margin-right: rem(10px);
-    }
-}

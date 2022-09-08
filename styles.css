@@ -505,6 +505,36 @@ button {
   fill: #1A2A33;
 }
 
+.current-turn {
+  width: 6rem;
+  height: 2.5rem;
+  fill: #A8BFC9;
+  font-weight: 700;
+  box-shadow: inset 0px -4px 0px #10212A;
+  padding-bottom: 0.25rem;
+}
+@media (min-width: 768px) {
+  .current-turn {
+    width: 8.75rem;
+    height: 3.25rem;
+    font-size: 1rem;
+    letter-spacing: 0.0625rem;
+    border-radius: 10px;
+  }
+}
+.current-turn__mark {
+  width: 1rem;
+  height: 1rem;
+  margin-right: 0.625rem;
+}
+@media (min-width: 768px) {
+  .current-turn__mark {
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-right: 0.875rem;
+  }
+}
+
 .menu-header {
   margin-top: 7.4375rem;
 }
@@ -537,36 +567,6 @@ button {
 @media (min-width: 1440px) {
   .game-header {
     margin-top: 8.6875rem;
-  }
-}
-
-.current-turn {
-  width: 6rem;
-  height: 2.5rem;
-  fill: #A8BFC9;
-  font-weight: 700;
-  box-shadow: inset 0px -4px 0px #10212A;
-  padding-bottom: 0.25rem;
-}
-@media (min-width: 768px) {
-  .current-turn {
-    width: 8.75rem;
-    height: 3.25rem;
-    font-size: 1rem;
-    letter-spacing: 0.0625rem;
-    border-radius: 10px;
-  }
-}
-.current-turn__mark {
-  width: 1rem;
-  height: 1rem;
-  margin-right: 0.625rem;
-}
-@media (min-width: 768px) {
-  .current-turn__mark {
-    width: 1.25rem;
-    height: 1.25rem;
-    margin-right: 0.875rem;
   }
 }
 
