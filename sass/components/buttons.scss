@@ -16,6 +16,14 @@
     }
 }
 
+.btn-silver {
+    @extend %bs-silver;
+    @extend %bg-silver;
+    &:hover {
+        background-color: $silver-hover;
+    }
+}
+
 .new-game-btn {
     @extend %text-s;
     @include mq(medium) {
@@ -44,9 +52,4 @@
     width:  rem(40px);
     height: rem(40px);
     border-radius: 5px;
-    box-shadow: inset 0px -4px 0px #6B8997;
-    background-color: $silver;
-    &:hover {
-        background-color: $silver-hover;
-    } 
 }
