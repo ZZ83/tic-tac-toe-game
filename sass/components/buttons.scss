@@ -45,11 +45,12 @@
 
 
 .restart-btn {
+    @extend %br-5;
     @include mq(medium) {
         width:  rem(52px);
         height: rem(52px);
+        border-radius: 10px;
     }
     width:  rem(40px);
     height: rem(40px);
-    border-radius: 5px;
 }

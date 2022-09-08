@@ -59,8 +59,16 @@
 }
 
 /********************** BORDER RADIUS PLACHOLDERS **********************/
+%br-5 {
+    border-radius: rem(5px);
+}
+
 %br-10 {
     border-radius: rem(10px);
+}
+
+%br-15 {
+    border-radius: rem(15px);
 }
 
 /********************** BOX SHADOW PLACHOLDERS **********************/

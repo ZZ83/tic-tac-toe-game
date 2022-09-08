@@ -1,6 +1,7 @@
 @use '../abstracts' as *;
 
 .menu-header {
+    margin-top: rem(119px);
     @extend %flex;
     @extend %flex-jc-c;
     @include mq(medium) {
@@ -9,5 +10,4 @@
     @include mq(large) {
         margin-top: rem(215px);
     }
-    margin-top: rem(119px);
 }

@@ -1,11 +1,11 @@
 @use '../abstracts' as *;
 
 .mark-selection {
+    @extend %br-15;
     @extend %bs-green;
     @extend %bg-semi-dark;
     height: rem(205px);
     margin-top: rem(33px);
-    border-radius: rem(15px);
     &__heading {
         padding: rem(24px) 0;
     }

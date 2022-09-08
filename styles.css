@@ -347,8 +347,16 @@ h4 {
 }
 
 /********************** BORDER RADIUS PLACHOLDERS **********************/
+.current-turn, .restart-btn {
+  border-radius: 0.3125rem;
+}
+
 .mark-selection__inner, .mark-selection__x, .mark-selection__o, button {
   border-radius: 0.625rem;
+}
+
+.mark-selection {
+  border-radius: 0.9375rem;
 }
 
 /********************** BOX SHADOW PLACHOLDERS **********************/
@@ -451,12 +459,12 @@ button {
 .restart-btn {
   width: 2.5rem;
   height: 2.5rem;
-  border-radius: 5px;
 }
 @media (min-width: 768px) {
   .restart-btn {
     width: 3.25rem;
     height: 3.25rem;
+    border-radius: 10px;
   }
 }
 
@@ -468,7 +476,6 @@ button {
 .mark-selection {
   height: 12.8125rem;
   margin-top: 2.0625rem;
-  border-radius: 0.9375rem;
 }
 .mark-selection__heading {
   padding: 1.5rem 0;
@@ -538,7 +545,6 @@ button {
   height: 2.5rem;
   fill: #A8BFC9;
   font-weight: 700;
-  border-radius: 5px;
   box-shadow: inset 0px -4px 0px #10212A;
   padding-bottom: 0.25rem;
 }
@@ -548,6 +554,7 @@ button {
     height: 3.25rem;
     font-size: 1rem;
     letter-spacing: 0.0625rem;
+    border-radius: 10px;
   }
 }
 .current-turn__mark {
