@@ -343,7 +343,7 @@ h4 {
   border-radius: 0.3125rem;
 }
 
-.game-board__item, .mark-selection__inner, .mark-selection__x, .mark-selection__o, button {
+.game-stats__p1, .game-stats__p2, .game-stats__ties, .game-board__item, .mark-selection__inner, .mark-selection__x, .mark-selection__o, button {
   border-radius: 0.625rem;
 }
 
@@ -369,15 +369,15 @@ h4 {
 }
 
 /********************** BACKGROUND COLOR PLACHOLDERS **********************/
-.btn-blue {
+.game-stats__p1, .btn-blue {
   background-color: #31C3BD;
 }
 
-.selected, .btn-silver {
+.game-stats__ties, .selected, .btn-silver {
   background-color: #A8BFC9;
 }
 
-.btn-yellow {
+.game-stats__p2, .btn-yellow {
   background-color: #F2B137;
 }
 
@@ -574,16 +574,28 @@ button {
 }
 
 .game-stats {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(3, 1fr);
+  color: #1A2A33;
   height: 4rem;
   margin-top: 1.25rem;
-  background-color: gray;
 }
 @media (min-width: 768px) {
   .game-stats {
     height: 4.5rem;
   }
 }
-
+.game-stats__p1, .game-stats__p2, .game-stats__ties {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+@media (min-width: 768px) {
+  .game-stats__p1, .game-stats__p2, .game-stats__ties {
+    border-radius: 0.9375rem;
+  }
+}
 .game-header {
   height: 2.5rem;
   margin-bottom: 4rem;
