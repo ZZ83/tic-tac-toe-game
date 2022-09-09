@@ -21,6 +21,10 @@ h4 {
     @extend %text-xs;
 }
 
+h2 {
+    @extend %text-m;
+}
+
 p {
     @extend %text-body; 
 }
