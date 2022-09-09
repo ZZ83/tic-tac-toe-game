@@ -1,8 +1,23 @@
+@use '../abstracts' as *;
+
 .overlay {
-    width: 100%;
     height: 100vh;
     position: absolute;
     top: 0;
-    background-color: black;
-    opacity: 50%;
+    background-color: rgba(0, 0, 0, 0.50);
+    @extend %width-100;
+}
+
+.message {
+    height: rem(228px);
+    margin-top:   min(rem(220px), 50%);
+    @extend %width-100;
+    @extend %bg-semi-dark;
+    @include mq(medium) {
+        height: rem(266px);
+        margin-top: rem(379px);
+    }
+    @include mq(large) {
+        margin-top: rem(329px);
+    }
 }

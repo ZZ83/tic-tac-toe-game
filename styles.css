@@ -390,13 +390,17 @@ h4 {
   background-color: #F2B137;
 }
 
-.game-board__item, .current-turn, .mark-selection {
+.message, .game-board__item, .current-turn, .mark-selection {
   background-color: #1F3641;
 }
 
 /********************** LAYOUT PLACHOLDERS **********************/
 .wrapper, .mark-selection__inner {
   margin: 0 auto;
+}
+
+.overlay, .message {
+  width: 100%;
 }
 
 .game-header, .game-stats, .game-board {
@@ -615,12 +619,26 @@ button {
 }
 
 .overlay {
-  width: 100%;
   height: 100vh;
   position: absolute;
   top: 0;
-  background-color: black;
-  opacity: 50%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.message {
+  height: 14.25rem;
+  margin-top: min(13.75rem, 50%);
+}
+@media (min-width: 768px) {
+  .message {
+    height: 16.625rem;
+    margin-top: 23.6875rem;
+  }
+}
+@media (min-width: 1440px) {
+  .message {
+    margin-top: 20.5625rem;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
