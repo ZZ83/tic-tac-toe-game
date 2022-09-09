@@ -9,6 +9,9 @@
 }
 
 .message {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     height: rem(228px);
     margin-top:   min(rem(220px), 50%);
     @extend %width-100;
@@ -21,6 +24,7 @@
         margin-top: rem(329px);
     }
     &__round {
+        margin-bottom: rem(15px);
         @extend %flex;
         @extend %flex-ai-c;
         @extend %flex-jc-c;

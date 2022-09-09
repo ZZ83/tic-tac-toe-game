@@ -656,6 +656,9 @@ button {
 }
 
 .message {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   height: 14.25rem;
   margin-top: min(13.75rem, 50%);
 }
@@ -669,6 +672,9 @@ button {
   .message {
     margin-top: 20.5625rem;
   }
+}
+.message__round {
+  margin-bottom: 0.9375rem;
 }
 .message__icon {
   width: 1.75rem;
