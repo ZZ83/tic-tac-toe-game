@@ -17,13 +17,24 @@ body {
     background-color: $dark-navy;
 }
 
-h4 {
-    @extend %text-xs;
+h1 {
+    color: $light-blue;
+    @extend %text-m;
+    @include mq(medium) {
+        font-size: rem(40px);
+        letter-spacing: rem(2.5px);
+    }
 }
 
 h2 {
     @extend %text-m;
 }
+
+h4 {
+    @extend %text-xs;
+}
+
+
 
 p {
     @extend %text-body; 

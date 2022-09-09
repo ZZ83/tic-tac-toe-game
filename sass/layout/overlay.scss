@@ -20,4 +20,19 @@
     @include mq(large) {
         margin-top: rem(329px);
     }
+    &__round {
+        @extend %flex;
+        @extend %flex-ai-c;
+        @extend %flex-jc-c;
+    }
+    &__icon {
+        width:  rem(28px);
+        height: rem(28px);
+        margin-right: rem(9px);
+        @include mq(medium) {
+            width:  rem(64px);
+            height: rem(64px);
+            margin-right: rem(25px);
+        }
+    }
 }

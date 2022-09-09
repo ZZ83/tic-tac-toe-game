@@ -308,11 +308,15 @@ template {
 }
 
 /********************** FLEXBOX PLACHOLDERS **********************/
-.menu-header, .game-stats__p1, .game-stats__p2, .game-stats__ties {
+.message__round, .menu-header, .game-stats__p1, .game-stats__p2, .game-stats__ties {
   display: flex;
 }
 
-.menu-header, .game-stats__p1, .game-stats__p2, .game-stats__ties {
+.message__round {
+  align-items: center;
+}
+
+.message__round, .menu-header, .game-stats__p1, .game-stats__p2, .game-stats__ties {
   justify-content: center;
 }
 
@@ -327,7 +331,7 @@ template {
 }
 
 /********************** TYPOGRAPHY PLACHOLDERS **********************/
-h2 {
+h1, h2 {
   font-size: 1.5rem;
   letter-spacing: 0.09375rem;
 }
@@ -337,7 +341,8 @@ h2 {
   letter-spacing: 0.078125rem;
 }
 
-h4 {
+.btn-left,
+.btn-right, h4 {
   font-size: 1rem;
   letter-spacing: 0.0625rem;
 }
@@ -426,6 +431,16 @@ body {
   background-color: #1A2A33;
 }
 
+h1 {
+  color: #31C3BD;
+}
+@media (min-width: 768px) {
+  h1 {
+    font-size: 2.5rem;
+    letter-spacing: 0.15625rem;
+  }
+}
+
 button {
   border: none;
   cursor: pointer;
@@ -478,6 +493,21 @@ button {
     height: 3.25rem;
     border-radius: 10px;
   }
+}
+
+.btn-left,
+.btn-right {
+  padding: 0 1.125rem 0.25rem;
+  color: #1A2A33;
+  height: 3.25rem;
+}
+
+.btn-left {
+  margin-right: 1rem;
+}
+
+.btn-right {
+  box-shadow: inset 0px -4px 0px #CC8B13;
 }
 
 .logo {
@@ -638,6 +668,18 @@ button {
 @media (min-width: 1440px) {
   .message {
     margin-top: 20.5625rem;
+  }
+}
+.message__icon {
+  width: 1.75rem;
+  height: 1.75rem;
+  margin-right: 0.5625rem;
+}
+@media (min-width: 768px) {
+  .message__icon {
+    width: 4rem;
+    height: 4rem;
+    margin-right: 1.5625rem;
   }
 }
 

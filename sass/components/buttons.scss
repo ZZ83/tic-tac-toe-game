@@ -54,3 +54,19 @@
         border-radius: 10px;
     }
 }
+
+.btn-left,
+.btn-right {
+    padding: 0 rem(18px) rem(4px);
+    color: $dark-navy;
+    height: rem(52px);
+    @extend %text-xs;
+}
+
+.btn-left {
+    margin-right: 1rem;
+}
+
+.btn-right {
+    box-shadow: inset 0px -4px 0px #CC8B13;
+}
