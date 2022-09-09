@@ -24,3 +24,11 @@
         }
     }
 }
+
+// Button base styles
+@mixin btn-base($box-color, $hover-color, $left: -8px) {
+    box-shadow: inset 0px $left 0px $box-color;
+    &:hover {
+        background-color: $hover-color;
+    }
+}

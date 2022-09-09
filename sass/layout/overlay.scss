@@ -1,9 +1,9 @@
 @use '../abstracts' as *;
 
 .overlay {
-    height: 100vh;
-    position: absolute;
-    top: 0;
+    // height: 100vh;
+    // position: absolute;
+    // top: 0;
     background-color: rgba(0, 0, 0, 0.50);
     @extend %width-100;
 }

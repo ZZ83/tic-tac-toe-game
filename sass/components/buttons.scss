@@ -1,27 +1,19 @@
 @use '../abstracts' as *;
 
 .btn-yellow {
-    @extend %bs-yellow;
     @extend %bg-yellow;
-    &:hover {
-        background-color: $light-yellow-hover;
-    }
+    @include btn-base(#CC8B13, $light-yellow-hover)
 }
 
 .btn-blue {
-    @extend %bs-blue;
     @extend %bg-blue;
-    &:hover {
-        background-color: $light-blue-hover;
-    }
+    @include btn-base(#118C87, $light-blue-hover)
 }
 
 .btn-silver {
-    @extend %bs-silver;
     @extend %bg-silver;
-    &:hover {
-        background-color: $silver-hover;
-    }
+    @include btn-base(#6B8997, $silver-hover, rem(-4px))
+    
 }
 
 .btn-new-game {

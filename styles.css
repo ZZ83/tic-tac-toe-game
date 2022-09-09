@@ -361,25 +361,9 @@ h1, h2 {
   border-radius: 0.625rem;
 }
 
-.mark-selection {
-  border-radius: 0.9375rem;
-}
-
 /********************** BOX SHADOW PLACHOLDERS **********************/
 .game-board__item, .mark-selection {
   box-shadow: inset 0px -8px 0px #10212A;
-}
-
-.btn-yellow {
-  box-shadow: inset 0px -8px 0px #CC8B13;
-}
-
-.btn-blue {
-  box-shadow: inset 0px -8px 0px #118C87;
-}
-
-.btn-silver {
-  box-shadow: inset 0px -4px 0px #6B8997;
 }
 
 /********************** BACKGROUND COLOR PLACHOLDERS **********************/
@@ -448,14 +432,23 @@ button {
   text-transform: uppercase;
 }
 
+.btn-yellow {
+  box-shadow: inset 0px -8px 0px #CC8B13;
+}
 .btn-yellow:hover {
   background-color: #FFC860;
 }
 
+.btn-blue {
+  box-shadow: inset 0px -8px 0px #118C87;
+}
 .btn-blue:hover {
   background-color: #65E9E4;
 }
 
+.btn-silver {
+  box-shadow: inset 0px -0.25rem 0px #6B8997;
+}
 .btn-silver:hover {
   background-color: #DBE8ED;
 }
@@ -518,6 +511,7 @@ button {
 .mark-selection {
   height: 12.8125rem;
   margin-top: 2.0625rem;
+  border-radius: 0.9375rem;
 }
 .mark-selection__heading {
   padding: 1.5rem 0;
@@ -649,9 +643,6 @@ button {
 }
 
 .overlay {
-  height: 100vh;
-  position: absolute;
-  top: 0;
   background-color: rgba(0, 0, 0, 0.5);
 }
 

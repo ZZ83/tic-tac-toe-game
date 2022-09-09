@@ -3,28 +3,28 @@
 .mark-selection {
     height: rem(205px);
     margin-top: rem(33px);
-    @extend %br-15;
+    border-radius: rem(15px);
     @extend %bs-green;
     @extend %bg-semi-dark;
     &__heading {
         padding: rem(24px) 0;
     }
     &__inner {
-        @extend %center;
-        @extend %br-10;
-        @extend %flex-hv-center;
         width: 85%;
         height: rem(72px);
         background-color: $dark-navy;
+        @extend %center;
+        @extend %br-10;
+        @extend %flex-hv-center;
     }
     &__x,
     &__o {
-        @extend %br-10;
-        @extend %flex-hv-center;
         width: 47%;
         height: rem(54px);
         fill: $silver;
         cursor: pointer;
+        @extend %br-10;
+        @extend %flex-hv-center;
     }
     &__sub-heading {
         opacity: 50%;
