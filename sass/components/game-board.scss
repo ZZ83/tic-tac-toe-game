@@ -1,11 +1,9 @@
 @use '../abstracts' as *;
 
 .game-board {
-    aspect-ratio: 1 / 1;
-    display: grid;
-    gap: rem(20px);
-    grid-template-columns: repeat(3, 1fr);
     cursor: pointer;
+    aspect-ratio: 1 / 1;
+    @extend %game-grid;
     &__item {
         @extend %br-10;
         @extend %bs-green;

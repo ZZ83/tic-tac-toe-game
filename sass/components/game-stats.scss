@@ -1,12 +1,10 @@
 @use '../abstracts' as *;
 
 .game-stats {
-    display: grid;
-    gap: 20px;
-    grid-template-columns: repeat(3, 1fr);
     color: $dark-navy;
     height: rem(64px);
     margin-top: rem(20px);
+    @extend %game-grid;
     @include mq(medium) {
         height: rem(72px);
     }

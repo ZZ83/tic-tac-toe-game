@@ -394,6 +394,12 @@ h4 {
   margin: 0 auto;
 }
 
+.game-header, .game-stats, .game-board {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(3, 1fr);
+}
+
 *,
 *:after,
 *:before {
@@ -532,11 +538,8 @@ button {
 }
 
 .game-board {
-  aspect-ratio: 1/1;
-  display: grid;
-  gap: 1.25rem;
-  grid-template-columns: repeat(3, 1fr);
   cursor: pointer;
+  aspect-ratio: 1/1;
 }
 @media (min-width: 768px) {
   .game-board__item {
@@ -545,9 +548,6 @@ button {
 }
 
 .game-stats {
-  display: grid;
-  gap: 20px;
-  grid-template-columns: repeat(3, 1fr);
   color: #1A2A33;
   height: 4rem;
   margin-top: 1.25rem;
@@ -598,9 +598,6 @@ button {
 .game-header {
   height: 2.5rem;
   margin-bottom: 4rem;
-  display: grid;
-  gap: 20px;
-  grid-template-columns: repeat(3, 1fr);
   align-items: center;
 }
 @media (min-width: 768px) {
