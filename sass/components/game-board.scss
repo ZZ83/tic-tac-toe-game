@@ -1,10 +1,10 @@
 @use '../abstracts' as *;
 
 .game-board {
-    cursor: pointer;
     aspect-ratio: 1 / 1;
     @extend %game-grid;
     &__item {
+        cursor: pointer;
         @extend %br-10;
         @extend %bs-green;
         @extend %bg-semi-dark;
