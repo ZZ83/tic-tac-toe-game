@@ -308,12 +308,16 @@ template {
 }
 
 /********************** FLEXBOX PLACHOLDERS **********************/
-.menu-header {
+.menu-header, .game-stats__p1, .game-stats__p2, .game-stats__ties {
   display: flex;
 }
 
-.menu-header {
+.menu-header, .game-stats__p1, .game-stats__p2, .game-stats__ties {
   justify-content: center;
+}
+
+.game-stats__p1, .game-stats__p2, .game-stats__ties {
+  flex-direction: column;
 }
 
 .game-board__item, .current-turn, .mark-selection__inner, .mark-selection__x, .mark-selection__o {
@@ -540,6 +544,24 @@ button {
   }
 }
 
+.game-stats {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(3, 1fr);
+  color: #1A2A33;
+  height: 4rem;
+  margin-top: 1.25rem;
+}
+@media (min-width: 768px) {
+  .game-stats {
+    height: 4.5rem;
+  }
+}
+@media (min-width: 768px) {
+  .game-stats__p1, .game-stats__p2, .game-stats__ties {
+    border-radius: 0.9375rem;
+  }
+}
 .menu-header {
   margin-top: 7.4375rem;
 }
@@ -573,29 +595,6 @@ button {
   }
 }
 
-.game-stats {
-  display: grid;
-  gap: 20px;
-  grid-template-columns: repeat(3, 1fr);
-  color: #1A2A33;
-  height: 4rem;
-  margin-top: 1.25rem;
-}
-@media (min-width: 768px) {
-  .game-stats {
-    height: 4.5rem;
-  }
-}
-.game-stats__p1, .game-stats__p2, .game-stats__ties {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-@media (min-width: 768px) {
-  .game-stats__p1, .game-stats__p2, .game-stats__ties {
-    border-radius: 0.9375rem;
-  }
-}
 .game-header {
   height: 2.5rem;
   margin-bottom: 4rem;
