@@ -432,6 +432,11 @@ button {
   text-transform: uppercase;
 }
 
+svg,
+path {
+  pointer-events: none;
+}
+
 .btn-yellow {
   box-shadow: inset 0px -8px 0px #CC8B13;
 }
