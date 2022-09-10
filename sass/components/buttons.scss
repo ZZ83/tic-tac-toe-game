@@ -13,7 +13,6 @@
 .btn-silver {
     @extend %bg-silver;
     @include btn-base(#6B8997, $silver-hover, rem(-4px))
-    
 }
 
 .btn-new-game {
