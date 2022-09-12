@@ -308,15 +308,15 @@ template {
 }
 
 /********************** FLEXBOX PLACHOLDERS **********************/
-.message__round, .menu-header, .game-stats__p1, .game-stats__p2, .game-stats__ties {
+.menu-header, .alpha-modal__inner-wrapper, .game-stats__p1, .game-stats__p2, .game-stats__ties {
   display: flex;
 }
 
-.message__round {
+.alpha-modal__inner-wrapper {
   align-items: center;
 }
 
-.message__round, .menu-header, .game-stats__p1, .game-stats__p2, .game-stats__ties {
+.menu-header, .alpha-modal__inner-wrapper, .game-stats__p1, .game-stats__p2, .game-stats__ties {
   justify-content: center;
 }
 
@@ -379,7 +379,7 @@ h1, h2 {
   background-color: #F2B137;
 }
 
-.message, .game-board__item, .current-turn, .mark-selection {
+.modal, .game-board__item, .current-turn, .mark-selection {
   background-color: #1F3641;
 }
 
@@ -388,7 +388,7 @@ h1, h2 {
   margin: 0 auto;
 }
 
-.overlay, .message {
+.overlay, .modal {
   width: 100%;
 }
 
@@ -416,7 +416,7 @@ body {
 }
 
 h1 {
-  color: #31C3BD;
+  margin: 0;
 }
 @media (min-width: 768px) {
   h1 {
@@ -602,6 +602,60 @@ path {
     border-radius: 0.9375rem;
   }
 }
+.modal {
+  height: 14.25rem;
+  margin-top: min(13.75rem, 50%);
+}
+@media (min-width: 768px) {
+  .modal {
+    height: 16.625rem;
+    margin-top: 23.6875rem;
+  }
+}
+@media (min-width: 1440px) {
+  .modal {
+    margin-top: 20.5625rem;
+  }
+}
+
+.alpha-modal__sub-header {
+  display: inline-block;
+  margin-top: 2.5rem;
+  margin-bottom: 1.125rem;
+}
+@media (min-width: 768px) {
+  .alpha-modal__sub-header {
+    margin-top: 2.8125rem;
+  }
+}
+.alpha-modal__inner-wrapper {
+  margin-bottom: 1.5625rem;
+}
+.alpha-modal__icon {
+  width: 1.75rem;
+  height: 1.75rem;
+  margin-right: 0.5625rem;
+}
+@media (min-width: 768px) {
+  .alpha-modal__icon {
+    width: 4rem;
+    height: 4rem;
+    margin-right: 1.5625rem;
+  }
+}
+
+.beta-modal__text {
+  display: inline-block;
+  margin-top: 3.9375rem;
+  margin-bottom: 1.5625rem;
+}
+@media (min-width: 768px) {
+  .beta-modal__text {
+    margin-top: 4.5625rem;
+    margin-bottom: 2.25rem;
+  }
+}
+
 .menu-header {
   margin-top: 7.4375rem;
 }
@@ -652,40 +706,6 @@ path {
   position: absolute;
   top: 0;
   background-color: rgba(0, 0, 0, 0.5);
-}
-
-.message {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 14.25rem;
-  margin-top: min(13.75rem, 50%);
-}
-@media (min-width: 768px) {
-  .message {
-    height: 16.625rem;
-    margin-top: 23.6875rem;
-  }
-}
-@media (min-width: 1440px) {
-  .message {
-    margin-top: 20.5625rem;
-  }
-}
-.message__round {
-  margin-bottom: 0.9375rem;
-}
-.message__icon {
-  width: 1.75rem;
-  height: 1.75rem;
-  margin-right: 0.5625rem;
-}
-@media (min-width: 768px) {
-  .message__icon {
-    width: 4rem;
-    height: 4rem;
-    margin-right: 1.5625rem;
-  }
 }
 
 /*# sourceMappingURL=styles.css.map */

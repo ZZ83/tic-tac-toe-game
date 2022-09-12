@@ -1,0 +1,54 @@
+@use '../abstracts' as *;
+
+.modal {
+    height: rem(228px);
+    margin-top:   min(rem(220px), 50%);
+    @extend %width-100;
+    @extend %bg-semi-dark;
+    @include mq(medium) {
+        height: rem(266px);
+        margin-top: rem(379px);
+    }
+    @include mq(large) {
+        margin-top: rem(329px);
+    }
+}
+
+.alpha-modal {
+    &__sub-header {
+        display: inline-block;
+        margin-top: rem(40px);
+        margin-bottom: rem(18px);
+        @include mq(medium) {
+            margin-top: rem(45px);
+        }
+    }
+    &__inner-wrapper {
+        margin-bottom: rem(25px);
+        @extend %flex;
+        @extend %flex-ai-c;
+        @extend %flex-jc-c;
+    }
+    &__icon {
+        width:  rem(28px);
+        height: rem(28px);
+        margin-right: rem(9px);
+        @include mq(medium) {
+            width:  rem(64px);
+            height: rem(64px);
+            margin-right: rem(25px);
+        }
+    }
+}
+
+.beta-modal {
+    &__text {
+        display: inline-block;
+        margin-top: rem(63px);
+        margin-bottom: rem(25px);
+        @include mq(medium) {
+            margin-top: rem(73px);
+            margin-bottom: rem(36px);
+        }
+    }
+}

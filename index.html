@@ -89,15 +89,27 @@
 		</div> <!-- Game end -->
 		<!-- Overlay -->
 		<div class="overlay" style="display: none;">
-			<div class="message">
-				<h4>player 1 wins!</h4>
-				<div class="message__round">
-					<svg class="message__icon" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M27.68 1.635a3 3 0 0 0-4.242 0L16 9.073 8.562 1.635a3 3 0 0 0-4.243 0L1.634 4.319a3 3 0 0 0 0 4.243L9.073 16l-7.439 7.44a3 3 0 0 0 0 4.242l2.685 2.685a3 3 0 0 0 4.243 0L16 22.927l7.438 7.439a3 3 0 0 0 4.243 0l2.685-2.685a3 3 0 0 0 0-4.242L22.927 16l7.439-7.438a3 3 0 0 0 0-4.243L27.68 1.635Z" fill="#31C3BD"/></svg>
-					<h1>round tied</h1>
+			<div class="modal">
+				<!-- Alpha modal -->
+				<div class="alpha-modal">
+					<h4 class="alpha-modal__sub-header">player 1 wins!</h4>
+					<div class="alpha-modal__inner-wrapper">
+						<svg class="alpha-modal__icon" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M27.68 1.635a3 3 0 0 0-4.242 0L16 9.073 8.562 1.635a3 3 0 0 0-4.243 0L1.634 4.319a3 3 0 0 0 0 4.243L9.073 16l-7.439 7.44a3 3 0 0 0 0 4.242l2.685 2.685a3 3 0 0 0 4.243 0L16 22.927l7.438 7.439a3 3 0 0 0 4.243 0l2.685-2.685a3 3 0 0 0 0-4.242L22.927 16l7.439-7.438a3 3 0 0 0 0-4.243L27.68 1.635Z" fill="#31C3BD"/></svg>
+						<h1>Takes the round</h1>
+					</div>
+					<div>
+						<button class="btn-silver btn-left">Quit</button>
+						<button class="btn-yellow btn-right">Next Round</button>
+					</div>
 				</div>
-				<div>
-					<button class="btn-silver btn-left">Quit</button>
-					<button class="btn-yellow btn-right">Next Round</button>
+
+				<!-- Beta modal -->
+				<div class="beta-modal">
+					<h1 class="beta-modal__text">restart game?</h1>
+					<div>
+						<button class="btn-silver btn-left">no, cancel</button>
+						<button class="btn-yellow btn-right">yes, restart</button>
+					</div>
 				</div>
 			</div>
 		</div> <!-- Overlay end -->

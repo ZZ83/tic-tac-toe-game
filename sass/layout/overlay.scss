@@ -8,35 +8,3 @@
     @extend %width-100;
 }
 
-.message {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: rem(228px);
-    margin-top:   min(rem(220px), 50%);
-    @extend %width-100;
-    @extend %bg-semi-dark;
-    @include mq(medium) {
-        height: rem(266px);
-        margin-top: rem(379px);
-    }
-    @include mq(large) {
-        margin-top: rem(329px);
-    }
-    &__round {
-        margin-bottom: rem(15px);
-        @extend %flex;
-        @extend %flex-ai-c;
-        @extend %flex-jc-c;
-    }
-    &__icon {
-        width:  rem(28px);
-        height: rem(28px);
-        margin-right: rem(9px);
-        @include mq(medium) {
-            width:  rem(64px);
-            height: rem(64px);
-            margin-right: rem(25px);
-        }
-    }
-}
