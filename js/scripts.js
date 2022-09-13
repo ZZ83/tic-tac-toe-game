@@ -1,5 +1,17 @@
-import { toggleMenuScreen, toggleGameScreen, toggleOverlayScreen } from "./toggleScreens.js";
-import { renderBetaModal } from "./modals.js";
+import { 
+    toggleMenuScreen, 
+    toggleGameScreen, 
+    toggleOverlayScreen 
+} from "./toggleScreens.js";
+
+import { 
+    renderAplhaModal, 
+    renderBetaModal 
+} from "./modals.js";
+
+import { 
+   withXIcon
+} from "./svg.js";
 
 document.querySelector(".mark-selection").addEventListener("click", function (event) {
     if (event.target.classList.contains("mark-selection__x")) {
@@ -25,5 +37,12 @@ document.querySelector("#new-game-buttons").addEventListener("click", function (
 
 document.querySelector(".btn-restart").addEventListener("click", function () {
     toggleOverlayScreen();
-    renderBetaModal("restart game?", "no, cancel", "yes, restart");
+    renderAplhaModal(withXIcon, "oh no you lost...");
+    // renderBetaModal("restart game?", "no, cancel", "yes, restart");
 });
+
+
+
+
+
+
