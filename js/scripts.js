@@ -37,11 +37,30 @@ document.querySelector("#new-game-buttons").addEventListener("click", function (
 
 document.querySelector(".btn-restart").addEventListener("click", function () {
     toggleOverlayScreen();
-    renderAplhaModal(withXIcon, "oh no you lost...");
+    renderBetaModal("Restart game?", "no, cancel", "yes, restart");
     // renderBetaModal("restart game?", "no, cancel", "yes, restart");
 });
 
 
+// const modalDiv    = document.querySelector(".modal");
+
+// const test = `
+//     <div class="beta-modal">
+//     <h1 class="beta-modal__text">{argument}</h1>
+//     <div class="test">
+//         <button class="btn-silver btn-left">{argument}</button>
+//         <button class="btn-yellow btn-right">{argument}</button>
+//     </div>
+//     </div>  
+// `
+
+// modalDiv.innerHTML = test;
+
+
+// document.querySelector(".test").addEventListener("click", function listener(event) {
+//     console.log("Testing");
+// });
+    
 
 
 
