@@ -10,6 +10,6 @@ export function toggleGameScreen() {
     game.style.display === "none" ? (game.style.display = "block") : (game.style.display = "none");
 }
 
-export function toggleOverlayScreen() {
+export function toggleOverlayModal() {
     overlay.style.display === "none" ? (overlay.style.display = "block") : (overlay.style.display = "none");
 }

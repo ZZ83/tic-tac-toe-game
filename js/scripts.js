@@ -1,12 +1,10 @@
 import { 
     toggleMenuScreen, 
     toggleGameScreen, 
-    toggleOverlayScreen 
-} from "./toggleScreens.js";
+    toggleOverlayModal 
+} from "./toggle.js";
 
 import { 
-    icons,
-    renderAplhaModal, 
     renderBetaModal 
 } from "./modals.js";
 
@@ -33,8 +31,8 @@ document.querySelector("#new-game-buttons").addEventListener("click", function (
 });
 
 document.querySelector(".btn-restart").addEventListener("click", function () {
-    toggleOverlayScreen();
-    renderAplhaModal(icons.svgO, "Player 1 takes the round");
+    toggleOverlayModal();
+    renderBetaModal("restart game?", "no, cancel", "yes, restart");
 });
     
 

@@ -1,8 +1,8 @@
 import { 
     toggleMenuScreen, 
     toggleGameScreen, 
-    toggleOverlayScreen 
-} from "./toggleScreens.js";
+    toggleOverlayModal
+} from "./toggle.js";
  
 const modal = document.querySelector(".modal");
 
@@ -34,12 +34,12 @@ export function renderAplhaModal(icon, message) {
     modal.innerHTML = alphaModal;
     document.querySelector(".test").addEventListener("click", function (event) {
         if (event.target.classList.contains("btn-left")) {
-            toggleOverlayScreen();
+            toggleOverlayModal();
             toggleGameScreen();
             toggleMenuScreen();
         }  
         if (event.target.classList.contains("btn-right")) {
-            toggleOverlayScreen();
+            toggleOverlayModal();
         } 
     });
 }
@@ -56,8 +56,12 @@ export function renderBetaModal(message, leftButtonText, rightButtonText) {
     `;
     modal.innerHTML = betaModal;
     document.querySelector(".test").addEventListener("click", function (event) {
-        if (event.target.classList.contains("btn-left"))  toggleOverlayScreen();
-        if (event.target.classList.contains("btn-right")) toggleOverlayScreen();
+        if (event.target.classList.contains("btn-left")) {
+            toggleOverlayModal();
+        } 
+        if (event.target.classList.contains("btn-right")) {
+            toggleOverlayModal();
+        }
     });
 }
 
