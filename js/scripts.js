@@ -1,4 +1,5 @@
 import { toggleMenuScreen, toggleGameScreen, toggleOverlayScreen } from "./toggleScreens.js";
+import { modal } from "./modals.js";
 
 /**
  * Listens for click on `.mark-selection`,
@@ -18,12 +19,10 @@ document.querySelector(".mark-selection").addEventListener("click", function (ev
 
 document.querySelector("#new-game-buttons").addEventListener("click", function (event) {
     if (event.target.classList.contains("btn-new-game--cpu")) {
-        console.log("CPU");
         toggleMenuScreen();
         toggleGameScreen();
     }
     if (event.target.classList.contains("btn-new-game--player")) {
-        console.log("PLAYER");
         toggleMenuScreen();
         toggleGameScreen();
     }
@@ -31,4 +30,5 @@ document.querySelector("#new-game-buttons").addEventListener("click", function (
 
 document.querySelector(".btn-restart").addEventListener("click", function () {
     toggleOverlayScreen();
+    modal.betaModal.render();
 });
