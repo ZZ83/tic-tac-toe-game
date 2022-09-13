@@ -1,5 +1,5 @@
-const game = document.querySelector(".game");
-const menu = document.querySelector(".new-game");
+const game    = document.querySelector(".game");
+const menu    = document.querySelector(".new-game");
 const overlay = document.querySelector(".overlay");
 
 export function toggleMenuScreen() {

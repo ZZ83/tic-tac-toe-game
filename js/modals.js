@@ -1,55 +1,54 @@
 import { toggleMenuScreen, toggleGameScreen, toggleOverlayScreen } from "./toggleScreens.js";
+   
+// Create the shared modal elements  
+const modalDiv    = document.querySelector(".modal");
+const leftButton  = document.createElement("button");
+const rightButton = document.createElement("button");
 
-export const modal = {
-    alphaModal: {},
-    betaModal: {
-        /**
-         * Create beta modal elements,
-         */
-        betaModal:      document.createElement("div"),
-        betaModalText:  document.createElement("h1"),
-        betaModalInner: document.createElement("div"),
-        leftButton:     document.createElement("button"),
-        rightButton:    document.createElement("button"),
-        render() {
-            /**
-             * Add the needed classes,
-             */
-            this.betaModal.classList.add("beta-modal");
-            this.betaModalText.classList.add("beta-modal__text");
-            this.betaModalInner.classList.add("beta-modal__inner");
-            this.leftButton.classList.add("btn-silver", "btn-left");
-            this.rightButton.classList.add("btn-yellow", "btn-right");
-            /**
-             * Set the needed innerHTML,
-             */
-            this.betaModalText.innerHTML = "restart game?";
-            this.leftButton.innerHTML    = "no, cancel";
-            this.rightButton.innerHTML   = "yes, restart";
-            /**
-             * Append elements together,
-             */
-            this.betaModalInner.append(this.leftButton, this.rightButton);
-            this.betaModal.append(this.betaModalText, this.betaModalInner);
-            /**
-             * Listens for click on `.betaModalText`,
-             */
-            this.betaModalInner.addEventListener("click", function listener(event) {
-                if (event.target.classList.contains("btn-left")) {
-                    toggleOverlayScreen();
-                    event.target.parentElement.parentElement.remove();
-                    event.target.parentElement.removeEventListener("click", listener);
-                }
-                if (event.target.classList.contains("btn-right")) {
-                    toggleOverlayScreen();
-                    toggleGameScreen();
-                    toggleMenuScreen();
-                    event.target.parentElement.parentElement.remove();
-                    event.target.parentElement.removeEventListener("click", listener);
-                }
-            });
+// Create beta modal elements
+const betaModal      = document.createElement("div");
+const betaModalText  = document.createElement("h1");
+const betaModalInner = document.createElement("div");
 
-            document.querySelector(".modal").append(this.betaModal);
-        },
-    },
-};
+export function renderBetaModal(message, leftButtonText, rightButtonText) {
+    // Add the needed classes,
+    betaModal.classList.add("beta-modal");
+    betaModalText.classList.add("beta-modal__text");
+    betaModalInner.classList.add("beta-modal__inner");
+    leftButton.classList.add("btn-silver", "btn-left");
+    rightButton.classList.add("btn-yellow", "btn-right");
+    
+    // Set the needed innerHTML,
+    betaModalText.innerHTML = message;
+    leftButton.innerHTML    = leftButtonText;
+    rightButton.innerHTML   = rightButtonText;
+    
+    // Append elements together
+    betaModalInner.append(leftButton, rightButton);
+    betaModal.append(betaModalText, betaModalInner);
+    
+    // Add click event to the left and right buttons
+    betaModalInner.addEventListener("click", function listener(event) {
+        if (event.target.classList.contains("btn-left")) {
+            toggleOverlayScreen();
+            event.target.parentElement.parentElement.remove();
+            event.target.parentElement.removeEventListener("click", listener);
+        }
+        if (event.target.classList.contains("btn-right")) {
+            toggleOverlayScreen();
+            toggleGameScreen();
+            toggleMenuScreen();
+            event.target.parentElement.parentElement.remove();
+            event.target.parentElement.removeEventListener("click", listener);
+        }
+    });
+    // Target modal div and insert betaModal HTML
+    modalDiv.append(betaModal);
+}
+    
+
+
+
+
+
+
