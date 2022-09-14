@@ -1,0 +1,11 @@
+@use 'variables' as *;
+
+.winner-x {
+    background-color: $light-blue;
+    box-shadow: inset 0px -8px 0px #118C87;
+}
+
+.winner-o {
+    background-color: $light-yellow;
+    box-shadow: inset 0px -8px 0px #CC8B13;
+}

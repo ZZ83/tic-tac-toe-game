@@ -4,7 +4,10 @@
     aspect-ratio: 1 / 1;
     @extend %game-grid;
     &__item {
+        stroke: transparent;
         cursor: pointer;
+        aspect-ratio: 1 / 1;
+        padding-bottom: rem(8px);
         @extend %br-10;
         @extend %bs-green;
         @extend %bg-semi-dark;
@@ -12,5 +15,18 @@
         @include mq(medium) {
             border-radius: rem(15px);
         }
+        &:hover {
+            stroke: var(--hover-outline);
+        }
+    }
+    &__x,
+    &__o,
+    &__outline-x,
+    &__outline-o {
+        display: none;
+    }
+    &__outline-x {
+        display: initial;
     }
 }
+

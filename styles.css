@@ -307,6 +307,10 @@ template {
   display: none;
 }
 
+:root {
+  --hover-outline: transparent;
+}
+
 /********************** FLEXBOX PLACHOLDERS **********************/
 .menu-header, .alpha-modal__inner-wrapper, .game-stats__p1, .game-stats__p2, .game-stats__ties {
   display: flex;
@@ -396,6 +400,16 @@ h1, h2 {
   display: grid;
   gap: 20px;
   grid-template-columns: repeat(3, 1fr);
+}
+
+.winner-x {
+  background-color: #31C3BD;
+  box-shadow: inset 0px -8px 0px #118C87;
+}
+
+.winner-o {
+  background-color: #F2B137;
+  box-shadow: inset 0px -8px 0px #CC8B13;
 }
 
 *,
@@ -579,12 +593,24 @@ path {
   aspect-ratio: 1/1;
 }
 .game-board__item {
+  stroke: transparent;
   cursor: pointer;
+  aspect-ratio: 1/1;
+  padding-bottom: 0.5rem;
 }
 @media (min-width: 768px) {
   .game-board__item {
     border-radius: 0.9375rem;
   }
+}
+.game-board__item:hover {
+  stroke: var(--hover-outline);
+}
+.game-board__x, .game-board__o, .game-board__outline-x, .game-board__outline-o {
+  display: none;
+}
+.game-board__outline-x {
+  display: initial;
 }
 
 .game-stats {
