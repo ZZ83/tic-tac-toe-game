@@ -606,7 +606,7 @@ path {
 .game-board__item:hover {
   stroke: var(--hover-outline);
 }
-.game-board__x, .game-board__o, .game-board__outline-x, .game-board__outline-o {
+.game-board__outline-x, .game-board__outline-o {
   display: none;
 }
 

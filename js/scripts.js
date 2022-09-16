@@ -9,7 +9,7 @@ import {
 } from "./players.js";
 
 import { 
-    svgIcons
+    outlineIcons
 } from "./icons.js";
 
 import { 
@@ -54,7 +54,7 @@ document.querySelector(".btn-restart").addEventListener("click", function () {
 
 // Listens for clicks on the gameboard__item
 document.querySelectorAll(".game-board__item").forEach( (element) => {
-    element.innerHTML = svgIcons;
+    element.innerHTML = outlineIcons;
     element.addEventListener("click", function () {
         game.placeMarkOnBoard(element)
     });

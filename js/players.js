@@ -1,5 +1,6 @@
 import { 
-    mark
+    mark,
+    currentTurnIcons,
 } from "./icons.js";
 
 function setDisplay(elements, value) {
@@ -14,6 +15,8 @@ export const game = {
     isComputer: false,
     switchMarks() {
         this.mark === "x" ? this.mark = "o" : this.mark = "x";
+        const  currentTurnDiv = document.querySelector(".current-turn");
+        currentTurnDiv.innerHTML = (currentTurnIcons[this.mark]) + "<span>turn</span>";
     },
     setOutlineColor(color) {
         document.querySelector(':root').style.setProperty("--hover-outline", color);
