@@ -6,7 +6,7 @@ import {
 
 import { 
     game,
-} from "./players.js";
+} from "./game.js";
 
 import { 
     outlineIcons
