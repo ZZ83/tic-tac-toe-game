@@ -53,10 +53,10 @@ document.querySelector(".btn-restart").addEventListener("click", function () {
 });
 
 // Listens for clicks on the gameboard__item
-document.querySelectorAll(".game-board__item").forEach( (element) => {
+document.querySelectorAll(".game-board__item").forEach( (element, index) => {
     element.innerHTML = outlineIcons;
     element.addEventListener("click", function () {
-        game.placeMarkOnBoard(element)
+        game.placeMarkOnBoard(element, index);
     });
 });
 

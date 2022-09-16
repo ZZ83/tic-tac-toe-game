@@ -3,6 +3,12 @@ import {
     currentTurnIcons,
 } from "./icons.js";
 
+const board = [
+    null, null, null,
+    null, null, null,
+    null, null, null,
+];
+
 function setDisplay(elements, value) {
     elements.forEach(element => {
         element.style.display = value;
@@ -25,7 +31,8 @@ export const game = {
         setDisplay(document.querySelectorAll(`.game-board__outline-${this.mark}`), "initial");
         this.setOutlineColor(mark[this.mark].color);
     },
-    placeMarkOnBoard(element) {
+    placeMarkOnBoard(element, index) {
+        board.splice(index, 1, this.mark);
         element.style.pointerEvents = "none";
         element.innerHTML = mark[this.mark].svg;
         element.firstElementChild.style.display = "initial";
