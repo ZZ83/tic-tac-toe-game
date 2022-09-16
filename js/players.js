@@ -1,26 +1,39 @@
-// The game board
-const gameBoard = [
-    1, 2, 3, 
-    4, 5, 6, 
-    7, 8, 9
-];
+import { 
+    mark
+} from "./icons.js";
 
-let numberOfTies = 0;
-
-export const player1 = {
-    score:         0,
-    mark:          "o",
-    isGoingFirst:  false,
-    isCurrentTurn: false,
+function setDisplay(elements, value) {
+    elements.forEach(element => {
+        element.style.display = value;
+    });
 }
 
-export const player2 = {
-    score:         0,
-    mark:          "x",
-    isGoingFirst:  true,
-    isCurrentTurn: true,
-    isComputer:    false,
+export const game = {
+    mark:     "o",
+    whosTurn: "player2",
+    isComputer: false,
+    switchMarks() {
+        this.mark === "x" ? this.mark = "o" : this.mark = "x";
+    },
+    setOutlineColor(color) {
+        document.querySelector(':root').style.setProperty("--hover-outline", color);
+    },
+    outlineCurrentPlayersMark() {
+        setDisplay(document.querySelectorAll(`.game-board__outline-${this.mark}`), "initial");
+        this.setOutlineColor(mark[this.mark].color);
+    },
+    placeMarkOnBoard(element) {
+        element.style.pointerEvents = "none";
+        element.innerHTML = mark[this.mark].svg;
+        element.firstElementChild.style.display = "initial";
+        setDisplay(document.querySelectorAll(`.game-board__outline-${this.mark}`), "none");
+        this.switchMarks();
+        setDisplay(document.querySelectorAll(`.game-board__outline-${this.mark}`), "initial");
+        this.setOutlineColor(mark[this.mark].color);
+    }
 }
+
+
 
 
 

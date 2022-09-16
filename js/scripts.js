@@ -5,9 +5,12 @@ import {
 } from "./toggle.js";
 
 import { 
-    player1, 
-    player2 
+    game,
 } from "./players.js";
+
+import { 
+    svgIcons
+} from "./icons.js";
 
 import { 
     renderBetaModal 
@@ -16,28 +19,16 @@ import {
 // Listens for clicks on X and O marks and highlight the selected mark
 document.querySelector(".mark-selection").addEventListener("click", function (event) {
     if (event.target.classList.contains("mark-selection__x")) {
-
-        player1.mark = "x";
-        player2.mark = "o";
-        player1.isGoingFirst = true;
-        player2.isGoingFirst = false;
-        player1.isCurrentTurn = true;
-        player2.isCurrentTurn = false;
-
-        event.target.classList.toggle("selected");
-        event.target.nextElementSibling.classList.toggle("selected");
+        game.mark = "x";
+        game.whosTurn = "player1"
+        event.target.classList.add("selected");
+        event.target.nextElementSibling.classList.remove("selected");
     }
     if (event.target.classList.contains("mark-selection__o")) {
-
-        player1.mark = "o";
-        player2.mark = "x";
-        player2.isGoingFirst = true;
-        player1.isGoingFirst = false;
-        player1.isCurrentTurn = false;
-        player2.isCurrentTurn = true;
-
-        event.target.classList.toggle("selected");
-        event.target.previousElementSibling.classList.toggle("selected");
+        game.mark = "o";
+        game.whosTurn = "player2"
+        event.target.classList.add("selected");
+        event.target.previousElementSibling.classList.remove("selected");
     }
 });
 
@@ -46,12 +37,13 @@ document.querySelector("#new-game-buttons").addEventListener("click", function (
     if (event.target.classList.contains("btn-new-game--cpu")) {
         toggleMenuScreen();
         toggleGameScreen();
-        player2.isComputer = true;
+        game.isComputer = true;
     }
     if (event.target.classList.contains("btn-new-game--player")) {
         toggleMenuScreen();
         toggleGameScreen();
     }
+    game.outlineCurrentPlayersMark();
 });
 
 // Listens for clicks on restart button and shows restart game modal
@@ -59,6 +51,21 @@ document.querySelector(".btn-restart").addEventListener("click", function () {
     toggleOverlayModal();
     renderBetaModal("restart game?", "no, cancel", "yes, restart");
 });
+
+// Listens for clicks on the gameboard__item
+document.querySelectorAll(".game-board__item").forEach( (element) => {
+    element.innerHTML = svgIcons;
+    element.addEventListener("click", function () {
+        game.placeMarkOnBoard(element)
+    });
+});
+
+
+
+
+
+
+
     
 
 

@@ -308,7 +308,7 @@ template {
 }
 
 :root {
-  --hover-outline: transparent;
+  --hover-outline: red;
 }
 
 /********************** FLEXBOX PLACHOLDERS **********************/
@@ -608,9 +608,6 @@ path {
 }
 .game-board__x, .game-board__o, .game-board__outline-x, .game-board__outline-o {
   display: none;
-}
-.game-board__outline-x {
-  display: initial;
 }
 
 .game-stats {
