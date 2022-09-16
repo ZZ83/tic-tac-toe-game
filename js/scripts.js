@@ -1,20 +1,13 @@
+import { game }            from "./game.js";
+import { boardItems }      from "./elements.js";
+import { outlineIcons }    from "./icons.js";
+import { renderBetaModal } from "./modals.js";
+
 import { 
     toggleMenuScreen, 
     toggleGameScreen, 
     toggleOverlayModal 
 } from "./toggle.js";
-
-import { 
-    game,
-} from "./game.js";
-
-import { 
-    outlineIcons
-} from "./icons.js";
-
-import { 
-    renderBetaModal 
-} from "./modals.js";
 
 // Listens for clicks on X and O marks and highlight the selected mark
 document.querySelector(".mark-selection").addEventListener("click", function (event) {
@@ -53,8 +46,8 @@ document.querySelector(".btn-restart").addEventListener("click", function () {
 });
 
 // Listens for clicks on the gameboard__item
-document.querySelectorAll(".game-board__item").forEach( (element, index) => {
-    element.innerHTML = outlineIcons;
+boardItems.forEach( (element, index) => {
+    element.innerHTML = outlineIcons.x + outlineIcons.o;
     element.addEventListener("click", function () {
         game.placeMarkOnBoard(element, index);
     });

@@ -3,11 +3,14 @@ import {
     currentTurnIcons,
 } from "./icons.js";
 
+import { highlightWinningBoxes } from "./winner.js";
+
 const board = [
     null, null, null,
     null, null, null,
     null, null, null,
 ];
+
 
 function setDisplay(elements, value) {
     elements.forEach(element => {
@@ -33,6 +36,7 @@ export const game = {
     },
     placeMarkOnBoard(element, index) {
         board.splice(index, 1, this.mark);
+        
         element.style.pointerEvents = "none";
         element.innerHTML = mark[this.mark].svg;
         element.firstElementChild.style.display = "initial";
@@ -40,6 +44,8 @@ export const game = {
         this.switchMarks();
         setDisplay(document.querySelectorAll(`.game-board__outline-${this.mark}`), "initial");
         this.setOutlineColor(mark[this.mark].color);
+
+        highlightWinningBoxes(board);
     }
 }
 

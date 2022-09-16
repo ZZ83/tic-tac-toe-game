@@ -1,0 +1,1 @@
+export const boardItems = document.querySelectorAll(".game-board__item");
