@@ -1,7 +1,7 @@
 import { game }            from "./game.js";
 import { boardItems }      from "./elements.js";
 import { outlineIcons }    from "./icons.js";
-import { renderBetaModal } from "./modals.js";
+import { renderRestartBetaModal } from "./modals.js";
 
 import { 
     toggleMenuScreen, 
@@ -42,7 +42,7 @@ document.querySelector("#new-game-buttons").addEventListener("click", function (
 // Listens for clicks on restart button and shows restart game modal
 document.querySelector(".btn-restart").addEventListener("click", function () {
     toggleOverlayModal();
-    renderBetaModal("restart game?", "no, cancel", "yes, restart");
+    renderRestartBetaModal();
 });
 
 // Listens for clicks on the gameboard__item

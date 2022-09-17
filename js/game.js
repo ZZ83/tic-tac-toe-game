@@ -1,20 +1,30 @@
 import { 
     mark,
     currentTurnIcons,
+    outlineIcons,
 } from "./icons.js";
+
+import { boardItems }      from "./elements.js";
 
 import { highlightWinningBoxes } from "./winner.js";
 
-const board = [
+function setDisplay(elements, value) {
+    elements.forEach(element => {
+        element.style.display = value;
+    });
+}
+
+let board = [
     null, null, null,
     null, null, null,
     null, null, null,
 ];
 
-
-function setDisplay(elements, value) {
-    elements.forEach(element => {
-        element.style.display = value;
+export function resetBoard() {
+    board = [null, null, null,null, null, null,null, null, null];
+    boardItems.forEach( (element) => {
+        element.innerHTML = outlineIcons.x + outlineIcons.o;
+        element.style.pointerEvents = "initial";
     });
 }
 

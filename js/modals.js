@@ -1,3 +1,4 @@
+import { resetBoard } from "./game.js";
 import { 
     toggleMenuScreen, 
     toggleGameScreen, 
@@ -36,13 +37,13 @@ export function renderAplhaModal(icon, message) {
 }
 
 // Creates the betaModal component
-export function renderBetaModal(message, leftButtonText, rightButtonText) {
+export function renderRestartBetaModal() {
     const betaModal = `
         <div class="beta-modal">
-        <h1 class="beta-modal__text">${message}</h1>
+        <h1 class="beta-modal__text">restart game?</h1>
         <div class="button-wrapper">
-            <button class="btn-silver btn-left">${leftButtonText}</button>
-            <button class="btn-yellow btn-right">${rightButtonText}</button>
+            <button class="btn-silver btn-left">no, cancel</button>
+            <button class="btn-yellow btn-right">yes, restart</button>
         </div>
         </div>  
     `;
@@ -54,6 +55,33 @@ export function renderBetaModal(message, leftButtonText, rightButtonText) {
         } 
         if (event.target.classList.contains("btn-right")) {
             toggleOverlayModal();
+        }
+    });
+}
+
+// Creates the betaModal component
+export function renderTiedBetaModal() {
+    const betaModal = `
+        <div class="beta-modal">
+        <h1 class="beta-modal__text">round tied</h1>
+        <div class="button-wrapper">
+            <button class="btn-silver btn-left">quit</button>
+            <button class="btn-yellow btn-right">next round</button>
+        </div>
+        </div>  
+    `;
+    modal.innerHTML = betaModal;
+    // Listens for clicks on both left and right modal buttons
+    document.querySelector(".button-wrapper").addEventListener("click", function (event) {
+        if (event.target.classList.contains("btn-left")) {
+            toggleOverlayModal();
+            toggleGameScreen();
+            toggleMenuScreen();
+            resetBoard();
+        } 
+        if (event.target.classList.contains("btn-right")) {
+            toggleOverlayModal();
+            resetBoard();
         }
     });
 }

@@ -1,5 +1,8 @@
-import { boardItems }   from "./elements.js";
-import { outlineIcons } from "./icons.js";
+import { boardItems }          from "./elements.js";
+import { outlineIcons }        from "./icons.js";
+import { toggleOverlayModal }  from "./toggle.js";
+import { renderTiedBetaModal } from "./modals.js";
+
 
 function hightlight(list, mark) {
     list.forEach(element => {
@@ -9,7 +12,11 @@ function hightlight(list, mark) {
     }); 
 }
 
-export function highlightWinningBoxes(board) { 
+function allAreTruthy(arr) {
+    return arr.every(element => element);
+}
+
+export function highlightWinningBoxes(board) {
     const row1   = [...boardItems].splice(0, 3);
     const row2   = [...boardItems].splice(3, 3);
     const row3   = [...boardItems].splice(6, 9);
@@ -69,5 +76,10 @@ export function highlightWinningBoxes(board) {
         case board[2] === "o" && board[4] === "o" && board[6] === "o":
             hightlight(slant2, "o");
             break;
+        case allAreTruthy(board):
+            toggleOverlayModal();
+            renderTiedBetaModal();
+            break;
     }
 }
+
