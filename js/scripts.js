@@ -9,7 +9,7 @@ import {
 } from "./toggle.js";
 
 /** 
- * Listen for click event on `.mark-selection` using bubbling
+ * Listen for click event on `.mark-selection` using bubbling.
  */
 document.querySelector(".mark-selection").addEventListener("click", function (event) {
     if (event.target.classList.contains("mark-selection__x")) {
@@ -25,7 +25,7 @@ document.querySelector(".mark-selection").addEventListener("click", function (ev
 });
 
 /** 
- * Listen for click event on `#new-game-buttons` using bubbling
+ * Listen for click event on `#new-game-buttons` using bubbling.
  */
 document.querySelector("#new-game-buttons").addEventListener("click", function (event) {
     if (event.target.classList.contains("btn-new-game--cpu")) {
@@ -41,7 +41,7 @@ document.querySelector("#new-game-buttons").addEventListener("click", function (
 });
 
 /** 
- * Listen for click event on `.btn-restart`
+ * Listen for click event on `.btn-restart`.
  */
 document.querySelector(".btn-restart").addEventListener("click", function () {
     toggleOverlayModal();
@@ -49,7 +49,7 @@ document.querySelector(".btn-restart").addEventListener("click", function () {
 });
 
 /** 
- * Listen for click event on each `.game-board__item`
+ * Listen for click event on each `.game-board__item`.
  */
 boardItems.forEach( (element, index) => {
     element.innerHTML = outlineIcons.x + outlineIcons.o;

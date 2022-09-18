@@ -3,7 +3,7 @@ const menu    = document.querySelector(".new-game");
 const overlay = document.querySelector(".overlay");
 
 /** 
- * Shows or hides either the game, menu, or overlay screen/modal
+ * Shows or hides either the game, menu, or overlay screen/modal.
  */
 export function toggleMenuScreen() {
     menu.style.display === "none" ? (menu.style.display = "block") : (menu.style.display = "none");
