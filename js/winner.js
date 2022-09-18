@@ -4,10 +4,21 @@ import { outlineIcons }        from "./icons.js";
 import { toggleOverlayModal }  from "./toggle.js";
 import { renderTiedBetaModal } from "./modals.js";
 
-function allAreTruthy(arr) {
-    return arr.every(element => element);
+
+/** 
+ * Checks if the array has all truthy values, ie, if every place on the game board has a mark.
+ * @param  {array}    board - Game board represented as an array.
+ * @return {boolean}  Boolean value indicating whether the game has ended in a tie (true) or not (false).
+ */
+function allAreTruthy(board) {
+    return board.every(element => element);
 }
 
+/** 
+ * Highlight the winning marks.
+ * @param {array}  list - List of the winning game board items.
+ * @param {string} mark - The mark of the winning player.
+ */
 function hightlight(list, mark) {
     list.forEach(element => {
         element.innerHTML = outlineIcons[mark];
@@ -16,6 +27,10 @@ function hightlight(list, mark) {
     }); 
 }
 
+/** 
+ * Check if the game has a winner or ends in a tie.
+ * @param {array} board - Game board represented as an array.
+ */
 export function highlightWinningBoxes(board) {
     const row1   = [...boardItems].splice(0, 3);
     const row2   = [...boardItems].splice(3, 3);
@@ -26,7 +41,7 @@ export function highlightWinningBoxes(board) {
     const slant1 = []; slant1.push(boardItems[0], boardItems[4], boardItems[8]);
     const slant2 = []; slant2.push(boardItems[2], boardItems[4], boardItems[6]);
     switch(true) {
-        // Hightlight winning X boxes
+        /** Hightlight winning rows, columns, or slants for X mark. */
         case board[0] === "x" && board[1] === "x" && board[2] === "x":
             hightlight(row1, "x");
             break;
@@ -51,7 +66,7 @@ export function highlightWinningBoxes(board) {
         case board[2] === "x" && board[4] === "x" && board[6] === "x":
             hightlight(slant2, "x");
             break;
-        // Hightlight winning O boxes
+        /** Hightlight winning rows, columns, or slants for O mark. */
         case board[0] === "o" && board[1] === "o" && board[2] === "o":
             hightlight(row1, "o");
             break;
@@ -76,6 +91,7 @@ export function highlightWinningBoxes(board) {
         case board[2] === "o" && board[4] === "o" && board[6] === "o":
             hightlight(slant2, "o");
             break;
+        /** Runs if the game ends in a tie. */
         case allAreTruthy(board):
             toggleOverlayModal();
             renderTiedBetaModal();
