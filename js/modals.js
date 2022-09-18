@@ -1,4 +1,8 @@
-import { resetBoard } from "./game.js";
+import { 
+    game, 
+    resetBoard 
+} from "./game.js";
+
 import { 
     toggleMenuScreen, 
     toggleGameScreen, 
@@ -78,6 +82,8 @@ export function renderTiedBetaModal() {
             toggleGameScreen();
             toggleMenuScreen();
             resetBoard();
+            game.resetScores();
+            console.log("test")
         } 
         if (event.target.classList.contains("btn-right")) {
             toggleOverlayModal();

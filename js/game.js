@@ -29,13 +29,24 @@ export function resetBoard() {
 }
 
 export const game = {
-    mark:     "o",
+    ties:         0,
+    player1Score: 0,
+    player2Score: 0,
+    mark:     "x",
     whosTurn: "player2",
     isComputer: false,
+    tieScoreElement: document.querySelector(".game-stats__ties").lastElementChild,
     switchMarks() {
         this.mark === "x" ? this.mark = "o" : this.mark = "x";
-        const  currentTurnDiv = document.querySelector(".current-turn");
-        currentTurnDiv.innerHTML = (currentTurnIcons[this.mark]) + "<span>turn</span>";
+        document.querySelector(".current-turn").innerHTML = (currentTurnIcons[this.mark]) + "<span>turn</span>";
+    },
+    resetScores() {
+        this.ties = 0;
+        this.tieScoreElement.innerHTML = this.ties;
+    },
+    setTiesScore() {
+        this.ties ++;
+        this.tieScoreElement.innerHTML = this.ties;
     },
     setOutlineColor(color) {
         document.querySelector(':root').style.setProperty("--hover-outline", color);

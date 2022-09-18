@@ -1,8 +1,12 @@
+import { game }                from "./game.js";
 import { boardItems }          from "./elements.js";
 import { outlineIcons }        from "./icons.js";
 import { toggleOverlayModal }  from "./toggle.js";
 import { renderTiedBetaModal } from "./modals.js";
 
+function allAreTruthy(arr) {
+    return arr.every(element => element);
+}
 
 function hightlight(list, mark) {
     list.forEach(element => {
@@ -10,10 +14,6 @@ function hightlight(list, mark) {
         element.classList.add(`winner-${mark}`);
         element.firstElementChild.style.display = "initial";
     }); 
-}
-
-function allAreTruthy(arr) {
-    return arr.every(element => element);
 }
 
 export function highlightWinningBoxes(board) {
@@ -79,6 +79,7 @@ export function highlightWinningBoxes(board) {
         case allAreTruthy(board):
             toggleOverlayModal();
             renderTiedBetaModal();
+            game.setTiesScore();
             break;
     }
 }
