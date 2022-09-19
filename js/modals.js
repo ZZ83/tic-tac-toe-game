@@ -8,6 +8,8 @@ import {
     toggleGameScreen, 
     toggleOverlayModal
 } from "./toggle.js";
+
+import { clearWinnerBoxes } from "./elements.js";
  
 const modal = document.querySelector(".modal");
 
@@ -33,10 +35,13 @@ export function renderAplhaModal(icon, message) {
             toggleOverlayModal();
             toggleGameScreen();
             toggleMenuScreen();
+            resetBoard();
             game.resetScores();
         }  
         if (event.target.classList.contains("btn-right")) {
             toggleOverlayModal();
+            resetBoard();
+            clearWinnerBoxes();
         } 
     });
 }
@@ -84,7 +89,6 @@ export function renderTiedBetaModal() {
             toggleMenuScreen();
             resetBoard();
             game.resetScores();
-            console.log("test")
         } 
         if (event.target.classList.contains("btn-right")) {
             toggleOverlayModal();
