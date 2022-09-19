@@ -33,6 +33,7 @@ export function renderAplhaModal(icon, message) {
             toggleOverlayModal();
             toggleGameScreen();
             toggleMenuScreen();
+            game.resetScores();
         }  
         if (event.target.classList.contains("btn-right")) {
             toggleOverlayModal();

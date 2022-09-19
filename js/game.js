@@ -63,8 +63,12 @@ export const game = {
         document.querySelector(".current-turn").innerHTML = (currentTurnIcons[this.mark]) + "<span>turn</span>";
     },
     resetScores() {
-        this.ties = 0;
-        this.tieScoreElement.innerHTML = this.ties;
+        this.ties    = 0;
+        this.player1 = 0;
+        this.player2 = 0;
+        this.tieScoreElement.innerHTML     = this.ties;
+        this.player1ScoreElement.innerHTML = this.player1;
+        this.player2ScoreElement.innerHTML = this.player2;
     },
     setTiesScore() {
         this.ties ++;
