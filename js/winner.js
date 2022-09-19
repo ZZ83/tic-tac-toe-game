@@ -44,52 +44,68 @@ export function highlightWinningBoxes(board) {
         /** Hightlight winning rows, columns, or slants for X mark. */
         case board[0] === "x" && board[1] === "x" && board[2] === "x":
             hightlight(row1, "x");
+            game.displayWinner();
             break;
         case board[3] === "x" && board[4] === "x" && board[5] === "x":
             hightlight(row2, "x");
+            game.displayWinner();
             break;
         case board[6] === "x" && board[7] === "x" && board[8] === "x":
             hightlight(row3, "x");
+            game.displayWinner();
             break;
         case board[0] === "x" && board[3] === "x" && board[6] === "x":
             hightlight(col1, "x");
+            game.displayWinner();
             break;
         case board[1] === "x" && board[4] === "x" && board[7] === "x":
             hightlight(col2, "x");
+            game.displayWinner();
             break;
         case board[2] === "x" && board[5] === "x" && board[8] === "x":
             hightlight(col3, "x");
+            game.displayWinner();
             break;
         case board[0] === "x" && board[4] === "x" && board[8] === "x":
             hightlight(slant1, "x");
+            game.displayWinner();
             break;
         case board[2] === "x" && board[4] === "x" && board[6] === "x":
             hightlight(slant2, "x");
+            game.displayWinner();
             break;
         /** Hightlight winning rows, columns, or slants for O mark. */
         case board[0] === "o" && board[1] === "o" && board[2] === "o":
             hightlight(row1, "o");
+            game.displayWinner();
             break;
         case board[3] === "o" && board[4] === "o" && board[5] === "o":
             hightlight(row2, "o");
+            game.displayWinner();
             break;
         case board[6] === "o" && board[7] === "o" && board[8] === "o":
             hightlight(row3, "o");
+            game.displayWinner();
             break;
         case board[0] === "o" && board[3] === "o" && board[6] === "o":
             hightlight(col1, "o");
+            game.displayWinner();
             break;
         case board[1] === "o" && board[4] === "o" && board[7] === "o":
             hightlight(col2, "o");
+            game.displayWinner();
             break;
         case board[2] === "o" && board[5] === "o" && board[8] === "o":
             hightlight(col3, "o");
+            game.displayWinner();
             break;
         case board[0] === "o" && board[4] === "o" && board[8] === "o":
             hightlight(slant1, "o");
+            game.displayWinner();
             break;
         case board[2] === "o" && board[4] === "o" && board[6] === "o":
             hightlight(slant2, "o");
+            game.displayWinner();
             break;
         /** Runs if the game ends in a tie. */
         case allAreTruthy(board):

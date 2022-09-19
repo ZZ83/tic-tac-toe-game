@@ -13,11 +13,15 @@ import {
  */
 document.querySelector(".mark-selection").addEventListener("click", function (event) {
     if (event.target.classList.contains("mark-selection__x")) {
-        game.whosTurn = "player1"
+        game.player1 = "x";
+        game.player2 = "o";
+        game.whosTurn = "player1";
         event.target.classList.add("selected");
         event.target.nextElementSibling.classList.remove("selected");
     }
     if (event.target.classList.contains("mark-selection__o")) {
+        game.player1 = "o";
+        game.player2 = "x";
         game.whosTurn = "player2"
         event.target.classList.add("selected");
         event.target.previousElementSibling.classList.remove("selected");
