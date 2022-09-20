@@ -312,7 +312,7 @@ template {
 }
 
 /********************** FLEXBOX PLACHOLDERS **********************/
-.menu-header, .alpha-modal__inner-wrapper, .game-stats__blue, .game-stats__yellow, .game-stats__ties {
+.menu-header, .alpha-modal__inner-wrapper, .game-stats__x, .game-stats__o, .game-stats__ties {
   display: flex;
 }
 
@@ -320,11 +320,11 @@ template {
   align-items: center;
 }
 
-.menu-header, .alpha-modal__inner-wrapper, .game-stats__blue, .game-stats__yellow, .game-stats__ties {
+.menu-header, .alpha-modal__inner-wrapper, .game-stats__x, .game-stats__o, .game-stats__ties {
   justify-content: center;
 }
 
-.game-stats__blue, .game-stats__yellow, .game-stats__ties {
+.game-stats__x, .game-stats__o, .game-stats__ties {
   flex-direction: column;
 }
 
@@ -361,7 +361,7 @@ h1, h2 {
   border-radius: 0.3125rem;
 }
 
-.game-stats__blue, .game-stats__yellow, .game-stats__ties, .game-board__item, .mark-selection__inner, .mark-selection__x, .mark-selection__o, button {
+.game-stats__x, .game-stats__o, .game-stats__ties, .game-board__item, .mark-selection__inner, .mark-selection__x, .mark-selection__o, button {
   border-radius: 0.625rem;
 }
 
@@ -371,7 +371,7 @@ h1, h2 {
 }
 
 /********************** BACKGROUND COLOR PLACHOLDERS **********************/
-.game-stats__blue, .btn-blue {
+.game-stats__x, .btn-blue {
   background-color: #31C3BD;
 }
 
@@ -379,7 +379,7 @@ h1, h2 {
   background-color: #A8BFC9;
 }
 
-.game-stats__yellow, .btn-yellow {
+.game-stats__o, .btn-yellow {
   background-color: #F2B137;
 }
 
@@ -621,7 +621,7 @@ path {
   }
 }
 @media (min-width: 768px) {
-  .game-stats__blue, .game-stats__yellow, .game-stats__ties {
+  .game-stats__x, .game-stats__o, .game-stats__ties {
     border-radius: 0.9375rem;
   }
 }

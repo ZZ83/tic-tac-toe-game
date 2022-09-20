@@ -23,22 +23,15 @@ export function setCurrentTurnMark(mark) {
 }
 
 export const game = {
-    ties: 0,
     isComputer: false,
     mark: "x",
     whosTurn: "player2",
     whoIsGoingFirst: "x",
-    tieScoreElement: document.querySelector(".game-stats__ties").lastElementChild,
+    
 
-    resetTieScore() {
-        this.ties = 0;
-        this.tieScoreElement.innerHTML = this.ties;
-    },
+   
 
-    addToTieScore() {
-        this.ties ++;
-        this.tieScoreElement.innerHTML = this.ties;
-    },
+  
 
     switchMarks() {
         this.mark === "x" ? this.mark = "o" : this.mark = "x";

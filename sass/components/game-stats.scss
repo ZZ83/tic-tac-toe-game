@@ -8,8 +8,8 @@
     @include mq(medium) {
         height: rem(72px);
     }
-    &__blue,
-    &__yellow,
+    &__x,
+    &__o,
     &__ties {
         @extend %flex;
         @extend %flex-d-c;
@@ -19,13 +19,13 @@
             border-radius: rem(15px);
         }
     }
-    &__blue {
+    &__x {
         @extend %bg-blue;
     }
     &__ties {
         @extend %bg-silver;
     }
-    &__yellow {
+    &__o {
         @extend %bg-yellow; 
     }
 }

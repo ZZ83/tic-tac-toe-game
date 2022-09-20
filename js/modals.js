@@ -1,5 +1,6 @@
 import { game }       from "./game.js";
 import { resetBoard } from "./board.js";
+import { resetScores } from "./scores.js";
 
 import { 
     toggleMenuScreen, 
@@ -61,10 +62,11 @@ export function renderRestartBetaModal() {
     document.querySelector(".button-wrapper").addEventListener("click", function (event) {
         if (event.target.classList.contains("btn-left")) {
             toggleOverlayModal();
+            reset
         } 
         if (event.target.classList.contains("btn-right")) {
             toggleOverlayModal();
-            game.resetTieScore();
+            resetScores();
         }
     });
 }

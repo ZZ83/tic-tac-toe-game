@@ -1,7 +1,14 @@
 import { 
     player1, 
-    player2 ,
+    player2,
 } from "./players.js";
+
+import {
+    addToXsScore,
+    addToOsScore,
+    addToTieScore,
+} from "./scores.js";
+
 import { 
     modalIcons,
     outlineIcons,  
@@ -67,78 +74,91 @@ export function highlightWinningBoxes(board) {
     switch(true) {
         /** Hightlight winning rows, columns, or slants for X mark. */
         case board[0] === "x" && board[1] === "x" && board[2] === "x":
-            // console.log(game.whoIsGoingFirst);
-            // game.switchWhosGoingFirst();
-            // console.log(game.whoIsGoingFirst);
             hightlight(row1, "x");
+            addToXsScore();
             displayWinner();
             break;
         case board[3] === "x" && board[4] === "x" && board[5] === "x":
             hightlight(row2, "x");
+            addToXsScore();
             displayWinner();
             break;
         case board[6] === "x" && board[7] === "x" && board[8] === "x":
             hightlight(row3, "x");
+            addToXsScore();
             displayWinner();
             break;
         case board[0] === "x" && board[3] === "x" && board[6] === "x":
             hightlight(col1, "x");
+            addToXsScore();
             displayWinner();
             break;
         case board[1] === "x" && board[4] === "x" && board[7] === "x":
             hightlight(col2, "x");
+            addToXsScore();
             displayWinner();
             break;
         case board[2] === "x" && board[5] === "x" && board[8] === "x":
             hightlight(col3, "x");
+            addToXsScore();
             displayWinner();
             break;
         case board[0] === "x" && board[4] === "x" && board[8] === "x":
             hightlight(slant1, "x");
+            addToXsScore();
             displayWinner();
             break;
         case board[2] === "x" && board[4] === "x" && board[6] === "x":
             hightlight(slant2, "x");
+            addToXsScore();
             displayWinner();
             break;
         /** Hightlight winning rows, columns, or slants for O mark. */
         case board[0] === "o" && board[1] === "o" && board[2] === "o":
             hightlight(row1, "o");
+            addToOsScore();
             displayWinner();
             break;
         case board[3] === "o" && board[4] === "o" && board[5] === "o":
             hightlight(row2, "o");
+            addToOsScore();
             displayWinner();
             break;
         case board[6] === "o" && board[7] === "o" && board[8] === "o":
             hightlight(row3, "o");
+            addToOsScore();
             displayWinner();
             break;
         case board[0] === "o" && board[3] === "o" && board[6] === "o":
             hightlight(col1, "o");
+            addToOsScore();
             displayWinner();
             break;
         case board[1] === "o" && board[4] === "o" && board[7] === "o":
             hightlight(col2, "o");
+            addToOsScore();
             displayWinner();
             break;
         case board[2] === "o" && board[5] === "o" && board[8] === "o":
             hightlight(col3, "o");
+            addToOsScore();
             displayWinner();
             break;
         case board[0] === "o" && board[4] === "o" && board[8] === "o":
             hightlight(slant1, "o");
+            addToOsScore();
             displayWinner();
             break;
         case board[2] === "o" && board[4] === "o" && board[6] === "o":
             hightlight(slant2, "o");
+            addToOsScore();
             displayWinner();
             break;
         /** Runs if the game ends in a tie. */
         case allAreTruthy(board):
             toggleOverlayModal();
             renderTiedBetaModal();
-            game.addToTieScore();
+            addToTieScore();
             break;
     }
 }
