@@ -2,17 +2,14 @@ import {
     player1, 
     player2 ,
 } from "./players.js";
-
 import { 
     modalIcons,
     outlineIcons,  
 } from "./icons.js";
-
 import {
     renderAplhaModal,
     renderTiedBetaModal,
 } from "./modals.js";
-
 import { game }                from "./game.js";
 import { boardItems }          from "./elements.js";
 import { toggleOverlayModal }  from "./toggle.js";
@@ -141,7 +138,6 @@ export function highlightWinningBoxes(board) {
         case allAreTruthy(board):
             toggleOverlayModal();
             renderTiedBetaModal();
-            setTiesScore();
             break;
     }
 }

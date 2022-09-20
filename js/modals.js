@@ -40,6 +40,7 @@ export function renderAplhaModal(icon, message) {
             toggleOverlayModal();
             resetBoard();
             clearWinnerBoxes();
+            game.switchWhosGoingFirst();
         } 
     });
 }

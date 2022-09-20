@@ -34,6 +34,8 @@ export const game = {
         this.whoIsGoingFirst === "x" ? this.whoIsGoingFirst = "o" : this.whoIsGoingFirst = "x";
         this.mark = this.whoIsGoingFirst;
         setCurrentTurnMark(currentTurnIcons[this.mark]);
+        setDisplay(this.mark, "initial");
+        this.setOutlineColor(mark[this.mark].color);
     },
 
     switchMarks() {
@@ -66,6 +68,7 @@ export const game = {
         element.style.pointerEvents = "none";
         // Places the current players mark on the tic tac toe board
         element.innerHTML = mark[this.mark].svg;
+
         setDisplay(this.mark, "none");
         highlightWinningBoxes(board);
         this.switchMarks();

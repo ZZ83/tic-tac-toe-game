@@ -23,7 +23,6 @@ document.querySelector(".mark-selection").addEventListener("click", function (ev
         player1.mark = "x";
         player2.mark = "o";
         game.whosTurn = "player1";
-        game.whoIsGoingFirst = "player1";
         event.target.classList.add("selected");
         event.target.nextElementSibling.classList.remove("selected");
     }
@@ -31,7 +30,6 @@ document.querySelector(".mark-selection").addEventListener("click", function (ev
         player1.mark = "o";
         player2.mark = "x";
         game.whosTurn = "player2"
-        game.whoIsGoingFirst = "player2";
         event.target.classList.add("selected");
         event.target.previousElementSibling.classList.remove("selected");
     }
