@@ -23,19 +23,21 @@ export function setCurrentTurnMark(mark) {
 }
 
 export const game = {
-    ties:       0,
+    ties: 0,
     isComputer: false,
     mark: "x",
     whosTurn: "player2",
     whoIsGoingFirst: "x",
     tieScoreElement: document.querySelector(".game-stats__ties").lastElementChild,
 
-    switchWhosGoingFirst() {
-        this.whoIsGoingFirst === "x" ? this.whoIsGoingFirst = "o" : this.whoIsGoingFirst = "x";
-        this.mark = this.whoIsGoingFirst;
-        setCurrentTurnMark(currentTurnIcons[this.mark]);
-        setDisplay(this.mark, "initial");
-        this.setOutlineColor(mark[this.mark].color);
+    resetTieScore() {
+        this.ties = 0;
+        this.tieScoreElement.innerHTML = this.ties;
+    },
+
+    addToTieScore() {
+        this.ties ++;
+        this.tieScoreElement.innerHTML = this.ties;
     },
 
     switchMarks() {
@@ -43,13 +45,12 @@ export const game = {
         setCurrentTurnMark(currentTurnIcons[this.mark]);
     },
 
-    resetScores() {
-        this.ties    = 0;
-    },
-
-    setTiesScore() {
-        this.ties ++;
-        this.tieScoreElement.innerHTML = this.ties;
+    switchWhosGoingFirst() {
+        this.whoIsGoingFirst === "x" ? this.whoIsGoingFirst = "o" : this.whoIsGoingFirst = "x";
+        this.mark = this.whoIsGoingFirst;
+        setCurrentTurnMark(currentTurnIcons[this.mark]);
+        setDisplay(this.mark, "initial");
+        this.setOutlineColor(mark[this.mark].color);
     },
 
     setOutlineColor(color) {

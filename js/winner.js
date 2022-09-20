@@ -138,6 +138,7 @@ export function highlightWinningBoxes(board) {
         case allAreTruthy(board):
             toggleOverlayModal();
             renderTiedBetaModal();
+            game.addToTieScore();
             break;
     }
 }

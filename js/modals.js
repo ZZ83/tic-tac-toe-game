@@ -34,7 +34,7 @@ export function renderAplhaModal(icon, message) {
             toggleGameScreen();
             toggleMenuScreen();
             resetBoard();
-            game.resetScores();
+            game.resetTieScore();
         }  
         if (event.target.classList.contains("btn-right")) {
             toggleOverlayModal();
@@ -64,6 +64,7 @@ export function renderRestartBetaModal() {
         } 
         if (event.target.classList.contains("btn-right")) {
             toggleOverlayModal();
+            game.resetTieScore();
         }
     });
 }
@@ -87,7 +88,7 @@ export function renderTiedBetaModal() {
             toggleGameScreen();
             toggleMenuScreen();
             resetBoard();
-            game.resetScores();
+            game.resetTieScore();
         } 
         if (event.target.classList.contains("btn-right")) {
             toggleOverlayModal();
