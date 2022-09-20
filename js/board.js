@@ -1,4 +1,5 @@
-import { boardItems } from "./elements.js";
+import { boardItems }   from "./elements.js";
+import { outlineIcons } from "./icons.js";
 
 export let board = [
     null, null, null,

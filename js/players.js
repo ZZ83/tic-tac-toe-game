@@ -21,9 +21,9 @@ function setYellowScore(score) {
     yellowScore.innerHTML = score;
 }
 
-function setScoreHeader(blueHeader, yellowHeader) {
-    const blue   = document.querySelector(".game-stats__p1").firstElementChild;
-    const yellow = document.querySelector(".game-stats__p2").firstElementChild;
-    blueHeader.  innerHTML = blueHeader;
-    yellowHeader.innerHTML = yellowHeader;
+export function setScoreHeaders(blueHeader, yellowHeader) {
+    const blue   = document.querySelector(".game-stats__blue").firstElementChild;
+    const yellow = document.querySelector(".game-stats__yellow").firstElementChild;
+    blue.  innerHTML = `X (${blueHeader})`;
+    yellow.innerHTML = `O (${yellowHeader})`;
 }

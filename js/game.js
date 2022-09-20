@@ -1,12 +1,9 @@
 import { 
     mark,
-    modalIcons,
     currentTurnIcons,
 } from "./icons.js";
 
 import { board }                 from "./board.js";
-import { renderAplhaModal }      from "./modals.js";
-import { toggleOverlayModal }    from "./toggle.js";
 import { highlightWinningBoxes } from "./winner.js";
 
 /** 
@@ -46,11 +43,6 @@ export const game = {
 
     resetScores() {
         this.ties    = 0;
-        this.player1 = 0;
-        this.player2 = 0;
-        this.tieScoreElement.innerHTML     = this.ties;
-        this.player1ScoreElement.innerHTML = this.player1;
-        this.player2ScoreElement.innerHTML = this.player2;
     },
 
     setTiesScore() {
