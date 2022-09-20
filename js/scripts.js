@@ -16,6 +16,7 @@ document.querySelector(".mark-selection").addEventListener("click", function (ev
         game.player1 = "x";
         game.player2 = "o";
         game.whosTurn = "player1";
+        game.whoIsGoingFirst = "player1";
         event.target.classList.add("selected");
         event.target.nextElementSibling.classList.remove("selected");
     }
@@ -23,6 +24,7 @@ document.querySelector(".mark-selection").addEventListener("click", function (ev
         game.player1 = "o";
         game.player2 = "x";
         game.whosTurn = "player2"
+        game.whoIsGoingFirst = "player2";
         event.target.classList.add("selected");
         event.target.previousElementSibling.classList.remove("selected");
     }
@@ -69,7 +71,6 @@ boardItems.forEach( (element, index) => {
 
 
     
-
 
 
 

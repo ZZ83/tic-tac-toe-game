@@ -1,7 +1,5 @@
-import { 
-    game, 
-    resetBoard 
-} from "./game.js";
+import { game }       from "./game.js";
+import { resetBoard } from "./board.js";
 
 import { 
     toggleMenuScreen, 

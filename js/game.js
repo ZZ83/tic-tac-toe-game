@@ -2,66 +2,48 @@ import {
     mark,
     modalIcons,
     currentTurnIcons,
-    outlineIcons,
 } from "./icons.js";
 
-import { toggleOverlayModal } from "./toggle.js";
-
-import { boardItems }      from "./elements.js";
-
+import { board }                 from "./board.js";
+import { renderAplhaModal }      from "./modals.js";
+import { toggleOverlayModal }    from "./toggle.js";
 import { highlightWinningBoxes } from "./winner.js";
 
-import {renderAplhaModal } from "./modals.js";
-
-function setDisplay(elements, value) {
-    elements.forEach(element => {
+/** 
+ * Sets the current players turn mark hover outline
+ * @param  {string}  string - Which outline mark to display
+ * @param  {string}  string - The display value
+ */
+function setDisplay(mark, value) {
+    const outline = document.querySelectorAll(`.game-board__outline-${mark}`);
+    outline.forEach( element => {
         element.style.display = value;
     });
 }
 
-let board = [
-    null, null, null,
-    null, null, null,
-    null, null, null,
-];
-
-export function resetBoard() {
-    board = [null, null, null,null, null, null,null, null, null];
-    boardItems.forEach( (element) => {
-        element.innerHTML = outlineIcons.x + outlineIcons.o;
-        element.style.pointerEvents = "initial";
-    });
+export function setCurrentTurnMark(mark) {
+    document.querySelector(".current-turn").innerHTML = mark + "<span>turn</span>";
 }
 
 export const game = {
-    ties:         0,
-    player1Score: 0,
-    player2Score: 0,
-    player1: "o",
-    player2: "x",
-    mark:     "x",
-    whosTurn: "player2",
+    ties:       0,
     isComputer: false,
-    tieScoreElement:     document.querySelector(".game-stats__ties").lastElementChild,
-    player1ScoreElement: document.querySelector(".game-stats__p1").lastElementChild,
-    player2ScoreElement: document.querySelector(".game-stats__p2").lastElementChild,
-    displayWinner() {
-        if(this.player1 === this.mark) {
-            this.player1Score ++;
-            this.player1ScoreElement.innerHTML = this.player1Score;
-            toggleOverlayModal();
-            renderAplhaModal(modalIcons[this.player1], "Player 1 wins!");
-        } else {
-            this.player2Score ++;
-            this.player2ScoreElement.innerHTML = this.player2Score;
-            toggleOverlayModal();
-            renderAplhaModal(modalIcons[this.player2], "Player 2 wins!");
-        }
+    mark: "x",
+    whosTurn: "player2",
+    whoIsGoingFirst: "x",
+    tieScoreElement: document.querySelector(".game-stats__ties").lastElementChild,
+
+    switchWhosGoingFirst() {
+        this.whoIsGoingFirst === "x" ? this.whoIsGoingFirst = "o" : this.whoIsGoingFirst = "x";
+        this.mark = this.whoIsGoingFirst;
+        setCurrentTurnMark(currentTurnIcons[this.mark]);
     },
+
     switchMarks() {
         this.mark === "x" ? this.mark = "o" : this.mark = "x";
-        document.querySelector(".current-turn").innerHTML = (currentTurnIcons[this.mark]) + "<span>turn</span>";
+        setCurrentTurnMark(currentTurnIcons[this.mark]);
     },
+
     resetScores() {
         this.ties    = 0;
         this.player1 = 0;
@@ -70,30 +52,33 @@ export const game = {
         this.player1ScoreElement.innerHTML = this.player1;
         this.player2ScoreElement.innerHTML = this.player2;
     },
+
     setTiesScore() {
         this.ties ++;
         this.tieScoreElement.innerHTML = this.ties;
     },
+
     setOutlineColor(color) {
         document.querySelector(':root').style.setProperty("--hover-outline", color);
     },
+
     outlineCurrentPlayersMark() {
-        setDisplay(document.querySelectorAll(`.game-board__outline-${this.mark}`), "initial");
+        setDisplay(this.mark, "initial");
         this.setOutlineColor(mark[this.mark].color);
     },
+
     placeMarkOnBoard(element, index) {
+        // Inserts the currents players mark into the board array
         board.splice(index, 1, this.mark);
-        
+        // Disables the div of the item just cliked on
         element.style.pointerEvents = "none";
+        // Places the current players mark on the tic tac toe board
         element.innerHTML = mark[this.mark].svg;
-        element.firstElementChild.style.display = "initial";
-        setDisplay(document.querySelectorAll(`.game-board__outline-${this.mark}`), "none");
+        setDisplay(this.mark, "none");
         highlightWinningBoxes(board);
         this.switchMarks();
-        setDisplay(document.querySelectorAll(`.game-board__outline-${this.mark}`), "initial");
+        setDisplay(this.mark, "initial");
         this.setOutlineColor(mark[this.mark].color);
-
-        
     }
 }
 
