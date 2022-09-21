@@ -1,6 +1,6 @@
-import { game }       from "./game.js";
-import { resetBoard } from "./board.js";
-import { resetScores } from "./scores.js";
+import { 
+    resetScores, 
+} from "./scores.js";
 
 import { 
     toggleMenuScreen, 
@@ -8,11 +8,13 @@ import {
     toggleOverlayModal
 } from "./toggle.js";
 
+import { game, resetToInitialState }             from "./game.js";
+import { resetBoard }       from "./board.js";
 import { clearWinnerBoxes } from "./elements.js";
- 
+
 const modal = document.querySelector(".modal");
 
-// Creates the alphaModal component
+// Creates the alphaModal component /////////////////////////////// Appears when a player wins the round
 export function renderAplhaModal(icon, message) {
     const alphaModal = `
         <div class="alpha-modal">
@@ -30,48 +32,26 @@ export function renderAplhaModal(icon, message) {
     modal.innerHTML = alphaModal;
     // Listens for clicks on both left and right modal buttons
     document.querySelector(".button-wrapper").addEventListener("click", function (event) {
+        // Quit button
         if (event.target.classList.contains("btn-left")) {
             toggleOverlayModal();
             toggleGameScreen();
             toggleMenuScreen();
+            clearWinnerBoxes();
             resetBoard();
-            game.resetTieScore();
+            resetScores();
+            resetToInitialState();
         }  
         if (event.target.classList.contains("btn-right")) {
             toggleOverlayModal();
-            resetBoard();
             clearWinnerBoxes();
+            resetBoard();
             game.switchWhosGoingFirst();
         } 
     });
 }
 
-// Creates the betaModal component
-export function renderRestartBetaModal() {
-    const betaModal = `
-        <div class="beta-modal">
-        <h1 class="beta-modal__text">restart game?</h1>
-        <div class="button-wrapper">
-            <button class="btn-silver btn-left">no, cancel</button>
-            <button class="btn-yellow btn-right">yes, restart</button>
-        </div>
-        </div>  
-    `;
-    modal.innerHTML = betaModal;
-    // Listens for clicks on both left and right modal buttons
-    document.querySelector(".button-wrapper").addEventListener("click", function (event) {
-        if (event.target.classList.contains("btn-left")) {
-            toggleOverlayModal();
-            reset
-        } 
-        if (event.target.classList.contains("btn-right")) {
-            toggleOverlayModal();
-            resetScores();
-        }
-    });
-}
-
-// Creates the betaModal component
+// Creates the betaModal component /////////////////////////////// Appears when the game ends in a tie
 export function renderTiedBetaModal() {
     const betaModal = `
         <div class="beta-modal">
@@ -90,14 +70,44 @@ export function renderTiedBetaModal() {
             toggleGameScreen();
             toggleMenuScreen();
             resetBoard();
-            game.resetTieScore();
+            resetScores();
+            resetToInitialState();
+        } 
+        if (event.target.classList.contains("btn-right")) {
+            toggleOverlayModal();
+            clearWinnerBoxes();
+            resetBoard();
+            game.switchWhosGoingFirst();
+        }
+    });
+}
+
+// Creates the betaModal component /////////////////////////////// Appears when the user click on the restart button
+export function renderRestartBetaModal() {
+    const betaModal = `
+        <div class="beta-modal">
+        <h1 class="beta-modal__text">restart game?</h1>
+        <div class="button-wrapper">
+            <button class="btn-silver btn-left">no, cancel</button>
+            <button class="btn-yellow btn-right">yes, restart</button>
+        </div>
+        </div>  
+    `;
+    modal.innerHTML = betaModal;
+    // Listens for clicks on both left and right modal buttons
+    document.querySelector(".button-wrapper").addEventListener("click", function (event) {
+        if (event.target.classList.contains("btn-left")) {
+            toggleOverlayModal();
         } 
         if (event.target.classList.contains("btn-right")) {
             toggleOverlayModal();
             resetBoard();
+            resetScores();
         }
     });
 }
+
+
 
 
 

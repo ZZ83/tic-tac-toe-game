@@ -1,18 +1,6 @@
-const oScore   = document.querySelector(".game-stats__o").lastElementChild;
 const xScore   = document.querySelector(".game-stats__x").lastElementChild;
+const oScore   = document.querySelector(".game-stats__o").lastElementChild;
 const tieScore = document.querySelector(".game-stats__ties").lastElementChild;
-
-export function resetScores() {
-    xScore.textContent   = "0";
-    oScore.textContent   = "0";
-    tieScore.textContent = "0";
-}
-
-export function addToTieScore() {
-    let score = parseInt(tieScore.textContent);
-    score ++;
-    tieScore.textContent = score;
-}
 
 export function addToXsScore() {
     let score = parseInt(xScore.textContent);
@@ -24,6 +12,18 @@ export function addToOsScore() {
     let score = parseInt(oScore.textContent);
     score ++;
     oScore.textContent = score;
+}
+
+export function addToTieScore() {
+    let score = parseInt(tieScore.textContent);
+    score ++;
+    tieScore.textContent = score;
+}
+
+export function resetScores() {
+    xScore.textContent   = "0";
+    oScore.textContent   = "0";
+    tieScore.textContent = "0";
 }
 
 export function setScoreHeaders(xHeader, oHeader) {

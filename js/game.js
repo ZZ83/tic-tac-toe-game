@@ -5,13 +5,14 @@ import {
 
 import { board }                 from "./board.js";
 import { highlightWinningBoxes } from "./winner.js";
+import { player1, player2 } from "./players.js";
 
 /** 
  * Sets the current players turn mark hover outline
  * @param  {string}  string - Which outline mark to display
  * @param  {string}  string - The display value
  */
-function setDisplay(mark, value) {
+export function setDisplay(mark, value) {
     const outline = document.querySelectorAll(`.game-board__outline-${mark}`);
     outline.forEach( element => {
         element.style.display = value;
@@ -22,17 +23,25 @@ export function setCurrentTurnMark(mark) {
     document.querySelector(".current-turn").innerHTML = mark + "<span>turn</span>";
 }
 
+
+export function resetToInitialState() {
+    const xMark =  document.querySelector(".mark-selection__x");
+    if( xMark.classList.contains("selected") ) {
+        xMark.classList.remove("selected");
+        xMark.nextElementSibling.classList.add("selected");
+    }
+    game.mark    = "x";
+    player1.mark = "o";
+    player2.mark = "x";
+    game.whoIsGoingFirst = "x"
+    setDisplay("o", "none");
+    setDisplay("x", "none");
+}
+
 export const game = {
     isComputer: false,
     mark: "x",
-    whosTurn: "player2",
     whoIsGoingFirst: "x",
-    
-
-   
-
-  
-
     switchMarks() {
         this.mark === "x" ? this.mark = "o" : this.mark = "x";
         setCurrentTurnMark(currentTurnIcons[this.mark]);

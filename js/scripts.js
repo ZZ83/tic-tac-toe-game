@@ -1,9 +1,3 @@
-import { game }                   from "./game.js";
-import { boardItems }             from "./elements.js";
-import { outlineIcons }           from "./icons.js";
-import { renderRestartBetaModal } from "./modals.js";
-import { setScoreHeaders } from "./scores.js";
-
 import { 
     player1, 
     player2,
@@ -15,7 +9,11 @@ import {
     toggleOverlayModal 
 } from "./toggle.js";
 
-
+import { game }                   from "./game.js";
+import { boardItems }             from "./elements.js";
+import { outlineIcons }           from "./icons.js";
+import { setScoreHeaders }        from "./scores.js";
+import { renderRestartBetaModal } from "./modals.js";
 
 /** 
  * Listen for click event on `.mark-selection` using bubbling.
