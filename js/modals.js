@@ -10,7 +10,6 @@ import {
 
 import { game, resetToInitialState, setCurrentTurnMark, setDisplay }             from "./game.js";
 import { resetBoard, clearWinnerBoxes }       from "./board.js";
-import {  } from "./elements.js";
 
 const modal = document.querySelector(".modal");
 import { currentTurnIcons } from "./icons.js";
