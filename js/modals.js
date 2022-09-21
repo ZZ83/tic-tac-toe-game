@@ -8,11 +8,12 @@ import {
     toggleOverlayModal
 } from "./toggle.js";
 
-import { game, resetToInitialState }             from "./game.js";
+import { game, resetToInitialState, setCurrentTurnMark, setDisplay }             from "./game.js";
 import { resetBoard }       from "./board.js";
 import { clearWinnerBoxes } from "./elements.js";
 
 const modal = document.querySelector(".modal");
+import { currentTurnIcons } from "./icons.js";
 
 // Creates the alphaModal component /////////////////////////////// Appears when a player wins the round
 export function renderAplhaModal(icon, message) {
@@ -103,6 +104,12 @@ export function renderRestartBetaModal() {
             toggleOverlayModal();
             resetBoard();
             resetScores();
+            game.mark    = "x";
+            game.whoIsGoingFirst = "x"
+            setCurrentTurnMark("x");
+            setDisplay("x", "initial")
+            game.setOutlineColor("#31C3BD");
+            setCurrentTurnMark(currentTurnIcons[game.mark])
         }
     });
 }
