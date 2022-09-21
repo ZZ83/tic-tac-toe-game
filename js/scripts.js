@@ -10,7 +10,7 @@ import {
 } from "./toggle.js";
 
 import { game }                   from "./game.js";
-import { boardItems }             from "./elements.js";
+import { boardItems }             from "./board.js";
 import { outlineIcons }           from "./icons.js";
 import { setScoreHeaders }        from "./scores.js";
 import { renderRestartBetaModal } from "./modals.js";
@@ -22,14 +22,12 @@ document.querySelector(".mark-selection").addEventListener("click", function (ev
     if (event.target.classList.contains("mark-selection__x")) {
         player1.mark = "x";
         player2.mark = "o";
-        game.whosTurn = "player1";
         event.target.classList.add("selected");
         event.target.nextElementSibling.classList.remove("selected");
     }
     if (event.target.classList.contains("mark-selection__o")) {
         player1.mark = "o";
         player2.mark = "x";
-        game.whosTurn = "player2"
         event.target.classList.add("selected");
         event.target.previousElementSibling.classList.remove("selected");
     }

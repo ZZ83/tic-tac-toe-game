@@ -9,8 +9,8 @@ import {
 } from "./toggle.js";
 
 import { game, resetToInitialState, setCurrentTurnMark, setDisplay }             from "./game.js";
-import { resetBoard }       from "./board.js";
-import { clearWinnerBoxes } from "./elements.js";
+import { resetBoard, clearWinnerBoxes }       from "./board.js";
+import {  } from "./elements.js";
 
 const modal = document.querySelector(".modal");
 import { currentTurnIcons } from "./icons.js";

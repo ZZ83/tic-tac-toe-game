@@ -1,5 +1,6 @@
-import { boardItems }   from "./elements.js";
 import { outlineIcons } from "./icons.js";
+
+export const boardItems = document.querySelectorAll(".game-board__item");
 
 export let board = [
     null, null, null,
@@ -13,5 +14,11 @@ export function resetBoard() {
         element.innerHTML = outlineIcons.x + outlineIcons.o;
         element.style.pointerEvents = "initial";
     });
+}
 
+export function clearWinnerBoxes() {
+    boardItems.forEach( (element) => {
+        element.classList.remove("winner-x");
+        element.classList.remove("winner-o");
+    });
 }

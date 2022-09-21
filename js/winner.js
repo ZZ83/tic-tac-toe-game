@@ -13,12 +13,14 @@ import {
     modalIcons,
     outlineIcons,  
 } from "./icons.js";
+
 import {
     renderAplhaModal,
     renderTiedBetaModal,
 } from "./modals.js";
+
 import { game }                from "./game.js";
-import { boardItems }          from "./elements.js";
+import { boardItems }          from "./board.js";
 import { toggleOverlayModal }  from "./toggle.js";
 
 /** 
