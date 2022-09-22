@@ -1,18 +1,25 @@
 import { 
-    resetScores, 
-} from "./scores.js";
+    resetBoard, 
+    clearWinnerBoxes, 
+} from "./board.js";
 
 import { 
     toggleMenuScreen, 
     toggleGameScreen, 
-    toggleOverlayModal
+    toggleOverlayModal,
 } from "./toggle.js";
 
-import { game, resetToInitialState, setCurrentTurnMark, setDisplay }             from "./game.js";
-import { resetBoard, clearWinnerBoxes }       from "./board.js";
+import { 
+    game, 
+    setDisplay, 
+    setCurrentTurnMark,
+    resetToInitialState, 
+} from "./game.js";
+
+import { resetScores }      from "./scores.js";
+import { currentTurnIcons } from "./icons.js";
 
 const modal = document.querySelector(".modal");
-import { currentTurnIcons } from "./icons.js";
 
 // Creates the alphaModal component /////////////////////////////// Appears when a player wins the round
 export function renderAplhaModal(icon, message) {
@@ -41,6 +48,7 @@ export function renderAplhaModal(icon, message) {
             resetBoard();
             resetScores();
             resetToInitialState();
+            setCurrentTurnMark(currentTurnIcons[game.mark]);
         }  
         if (event.target.classList.contains("btn-right")) {
             toggleOverlayModal();
@@ -72,6 +80,7 @@ export function renderTiedBetaModal() {
             resetBoard();
             resetScores();
             resetToInitialState();
+            setCurrentTurnMark(currentTurnIcons[game.mark])
         } 
         if (event.target.classList.contains("btn-right")) {
             toggleOverlayModal();

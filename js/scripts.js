@@ -8,7 +8,7 @@ import {
     toggleGameScreen, 
     toggleOverlayModal 
 } from "./toggle.js";
-
+import "./cpu.js";
 import { game }                   from "./game.js";
 import { boardItems }             from "./board.js";
 import { outlineIcons }           from "./icons.js";
@@ -68,11 +68,6 @@ boardItems.forEach( (element, index) => {
         game.placeMarkOnBoard(element, index);
     });
 });
-
-
-
-
-
 
 
     

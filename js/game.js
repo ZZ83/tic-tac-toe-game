@@ -23,7 +23,6 @@ export function setCurrentTurnMark(mark) {
     document.querySelector(".current-turn").innerHTML = mark + "<span>turn</span>";
 }
 
-
 export function resetToInitialState() {
     const xMark =  document.querySelector(".mark-selection__x");
     if( xMark.classList.contains("selected") ) {
