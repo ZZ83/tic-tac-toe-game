@@ -3,9 +3,10 @@ import {
     currentTurnIcons,
 } from "./icons.js";
 
-import { board }                 from "./board.js";
-import { highlightWinningBoxes } from "./winner.js";
+import { board, boardItems }                 from "./board.js";
+import { allAreTruthy, highlightWinningBoxes } from "./winner.js";
 import { player1, player2 } from "./players.js";
+import { bestMove } from "./cpu.js";
 
 /** 
  * Sets the current players turn mark hover outline
@@ -70,12 +71,28 @@ export const game = {
         element.style.pointerEvents = "none";
         // Places the current players mark on the tic tac toe board
         element.innerHTML = mark[this.mark].svg;
-
         setDisplay(this.mark, "none");
         highlightWinningBoxes(board);
         this.switchMarks();
         setDisplay(this.mark, "initial");
         this.setOutlineColor(mark[this.mark].color);
+        this.runAi();
+    },
+
+    runAi() {
+        if(game.isComputer === true && player2.mark === "x" && game.mark === "x" || game.isComputer === true && player2.mark === "o" && game.mark === "o") {
+            setTimeout(() => {
+                if( !allAreTruthy(board) ) {
+                    boardItems[bestMove()].innerHTML = mark[player2.mark].svg;
+                    board.splice(bestMove(), 1, player2.mark);
+                    setDisplay(game.mark, "none");
+                    highlightWinningBoxes(board);
+                    game.switchMarks();
+                    setDisplay(game.mark, "initial");
+                    game.setOutlineColor(mark[game.mark].color);
+                }
+            }, 200)
+        }
     }
 }
 

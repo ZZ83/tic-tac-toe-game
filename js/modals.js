@@ -1,6 +1,6 @@
 import { 
     resetBoard, 
-    clearWinnerBoxes, 
+    clearWinnerBoxes,
 } from "./board.js";
 
 import { 
@@ -87,6 +87,7 @@ export function renderTiedBetaModal() {
             clearWinnerBoxes();
             resetBoard();
             game.switchWhosGoingFirst();
+            game.runAi();
         }
     });
 }

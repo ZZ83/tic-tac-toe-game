@@ -43,7 +43,7 @@ function displayWinner() {
  * @param  {array}    board - Game board represented as an array.
  * @return {boolean}  Boolean value indicating whether the game has ended in a tie (true) or not (false).
  */
-function allAreTruthy(board) {
+export function allAreTruthy(board) {
     return board.every(element => element);
 }
 

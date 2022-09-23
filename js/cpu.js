@@ -1,6 +1,14 @@
+import { 
+    player1, 
+    player2, 
+} from "./players.js";
+
+import { board } from "./board.js";
+
+// I want the Ai to be + 10 and the player to be -10
 const scores = {
-    X:  10,
-    O: -10,
+    x:  10,
+    o: -10,
     tie: 0,
 };
 
@@ -10,14 +18,14 @@ const equals3 = (a, b, c) => {
 };
 
 // Bot move
-const bestMove = () => {
+export const bestMove = () => {
     // AI to make its turn
     let bestScore = -Infinity;
     let move;
     for (let i = 0; i < board.length; i++) {
         // Is the spot available?
         if (board[i] === null) {
-            board[i] = "X";
+            board[i] = player2.mark;
             let score = minimax(board, 0, false);
             board[i] = null;
             if (score > bestScore) {
@@ -28,6 +36,7 @@ const bestMove = () => {
     }
     return move;
 };
+
 
 // Calculate where next move should take place
 const minimax = (board, depth, isMaximizing) => {
@@ -41,7 +50,7 @@ const minimax = (board, depth, isMaximizing) => {
         for (let i = 0; i < board.length; i++) {
             // Is the spot available?
             if (board[i] === null) {
-                board[i] = "X";
+                board[i] = player2.mark;
                 let score = minimax(board, depth + 1, false);
                 board[i] = null;
                 bestScore = Math.max(score, bestScore);
@@ -53,7 +62,7 @@ const minimax = (board, depth, isMaximizing) => {
         for (let i = 0; i < board.length; i++) {
             // Is the spot available?
             if (board[i] === null) {
-                board[i] = "O";
+                board[i] = player1.mark;
                 let score = minimax(board, depth + 1, true);
                 board[i] = null;
                 bestScore = Math.min(score, bestScore);
@@ -62,6 +71,8 @@ const minimax = (board, depth, isMaximizing) => {
         return bestScore;
     }
 };
+
+
 
 // Check match winner
 const checkWinner = () => {
@@ -108,3 +119,112 @@ const checkWinner = () => {
 		return winner;
 	}
 };
+
+
+
+
+
+console.log( bestMove() )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
