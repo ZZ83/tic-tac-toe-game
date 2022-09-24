@@ -3,7 +3,7 @@ import { outlineIcons } from "./icons.js";
 export const boardItems = document.querySelectorAll(".game-board__item");
 
 export let board = [
-    "x", null, null,
+    null, null, null,
     null, null, null,
     null, null, null,
 ];

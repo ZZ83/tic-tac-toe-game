@@ -9,7 +9,10 @@ import {
     toggleOverlayModal 
 } from "./toggle.js";
 
+
+
 import { game }                   from "./game.js";
+import { scores }                 from "./cpu.js";
 import { boardItems }             from "./board.js";
 import { outlineIcons }           from "./icons.js";
 import { setScoreHeaders }        from "./scores.js";
@@ -21,12 +24,16 @@ import { renderRestartBetaModal } from "./modals.js";
  */
 document.querySelector(".mark-selection").addEventListener("click", function (event) {
     if (event.target.classList.contains("mark-selection__x")) {
+        scores.x = -10;
+        scores.o = 10;
         player1.mark = "x";
         player2.mark = "o";
         event.target.classList.add("selected");
         event.target.nextElementSibling.classList.remove("selected");
     }
     if (event.target.classList.contains("mark-selection__o")) {
+        scores.x = 10;
+        scores.o = -10;
         player1.mark = "o";
         player2.mark = "x";
         event.target.classList.add("selected");

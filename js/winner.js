@@ -30,11 +30,19 @@ function displayWinner() {
     if(player1.mark === game.mark) {
         player1.score ++;
         toggleOverlayModal();
-        renderAplhaModal(modalIcons[player1.mark], "Player 1 wins!");
+        if(game.isComputer == true) {
+            renderAplhaModal(modalIcons[player1.mark], "you won!");
+        } else {
+            renderAplhaModal(modalIcons[player1.mark], "Player 1 wins!");
+        } 
     } else {
         player2.score ++;
         toggleOverlayModal();
-        renderAplhaModal(modalIcons[player2.mark], "Player 2 wins!");
+        if(game.isComputer == true) {
+            renderAplhaModal(modalIcons[player2.mark], "oh no, you lost...");
+        } else {
+            renderAplhaModal(modalIcons[player2.mark], "Player 2 wins!");
+        }
     }
 }
 

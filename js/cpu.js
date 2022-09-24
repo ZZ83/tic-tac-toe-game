@@ -6,7 +6,7 @@ import {
 import { board } from "./board.js";
 
 // I want the Ai to be + 10 and the player to be -10
-const scores = {
+export const scores = {
     x:  10,
     o: -10,
     tie: 0,

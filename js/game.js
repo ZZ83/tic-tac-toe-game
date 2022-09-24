@@ -7,6 +7,7 @@ import { board, boardItems }                 from "./board.js";
 import { allAreTruthy, highlightWinningBoxes } from "./winner.js";
 import { player1, player2 } from "./players.js";
 import { bestMove } from "./cpu.js";
+import { scores } from "./cpu.js";
 
 /** 
  * Sets the current players turn mark hover outline
@@ -30,6 +31,8 @@ export function resetToInitialState() {
         xMark.classList.remove("selected");
         xMark.nextElementSibling.classList.add("selected");
     }
+    scores.x = 10;
+    scores.o = -10;
     game.mark    = "x";
     player1.mark = "o";
     player2.mark = "x";
