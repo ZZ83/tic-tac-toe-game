@@ -39,6 +39,7 @@ export function resetToInitialState() {
     game.whoIsGoingFirst = "x"
     setDisplay("o", "none");
     setDisplay("x", "none");
+    game.isComputer = false;
 }
 
 export const game = {

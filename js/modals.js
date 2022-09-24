@@ -119,6 +119,7 @@ export function renderRestartBetaModal() {
             setDisplay("x", "initial")
             game.setOutlineColor("#31C3BD");
             setCurrentTurnMark(currentTurnIcons[game.mark])
+            game.runAi();
         }
     });
 }
