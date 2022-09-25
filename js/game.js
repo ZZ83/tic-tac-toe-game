@@ -1,13 +1,25 @@
 import { 
+    player1, 
+    player2 
+} from "./players.js";
+
+import { 
+    board, 
+    boardItems 
+} from "./board.js";
+
+import { 
     mark,
     currentTurnIcons,
 } from "./icons.js";
 
-import { board, boardItems }                 from "./board.js";
-import { allAreTruthy, highlightWinningBoxes } from "./winner.js";
-import { player1, player2 } from "./players.js";
+import { 
+    allAreTruthy, 
+    highlightWinningBoxes 
+} from "./winner.js";
+
+import { scores }   from "./cpu.js";
 import { bestMove } from "./cpu.js";
-import { scores } from "./cpu.js";
 
 /** 
  * Sets the current players turn mark hover outline

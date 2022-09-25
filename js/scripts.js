@@ -9,15 +9,12 @@ import {
     toggleOverlayModal 
 } from "./toggle.js";
 
-
-
 import { game }                   from "./game.js";
 import { scores }                 from "./cpu.js";
 import { boardItems }             from "./board.js";
 import { outlineIcons }           from "./icons.js";
 import { setScoreHeaders }        from "./scores.js";
 import { renderRestartBetaModal } from "./modals.js";
-
 
 /** 
  * Listen for click event on `.mark-selection` using bubbling.

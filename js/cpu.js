@@ -5,16 +5,15 @@ import {
 
 import { board } from "./board.js";
 
-// I want the Ai to be + 10 and the player to be -10
+// Check all the values are equal
+const equals3 = (a, b, c) => {
+    return a === b && b === c && a !== "";
+};
+
 export const scores = {
     x:  10,
     o: -10,
     tie: 0,
-};
-
-// Check all the values are equal
-const equals3 = (a, b, c) => {
-    return a === b && b === c && a !== "";
 };
 
 // Bot move
@@ -36,7 +35,6 @@ export const bestMove = () => {
     }
     return move;
 };
-
 
 // Calculate where next move should take place
 const minimax = (board, depth, isMaximizing) => {
@@ -119,12 +117,6 @@ const checkWinner = () => {
 		return winner;
 	}
 };
-
-
-
-
-
-console.log( bestMove() )
 
 
 

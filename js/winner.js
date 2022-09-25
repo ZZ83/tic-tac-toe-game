@@ -3,12 +3,6 @@ import {
     player2,
 } from "./players.js";
 
-import {
-    addToXsScore,
-    addToOsScore,
-    addToTieScore,
-} from "./scores.js";
-
 import { 
     modalIcons,
     outlineIcons,  
@@ -19,12 +13,18 @@ import {
     renderTiedBetaModal,
 } from "./modals.js";
 
+import {
+    addToXsScore,
+    addToOsScore,
+    addToTieScore,
+} from "./scores.js";
+
 import { game }                from "./game.js";
 import { boardItems }          from "./board.js";
 import { toggleOverlayModal }  from "./toggle.js";
 
 /** 
- * Displays the overlay alphaModal with the winning players information
+ * Displays the overlay alphaModal with the winning players information.
  */
 function displayWinner() {
     if(player1.mark === game.mark) {
@@ -47,15 +47,6 @@ function displayWinner() {
 }
 
 /** 
- * Checks if the array has all truthy values, ie, if every place on the game board has a mark.
- * @param  {array}    board - Game board represented as an array.
- * @return {boolean}  Boolean value indicating whether the game has ended in a tie (true) or not (false).
- */
-export function allAreTruthy(board) {
-    return board.every(element => element);
-}
-
-/** 
  * Highlight the winning marks.
  * @param {array}  list - List of the winning game board items.
  * @param {string} mark - The mark of the winning player.
@@ -66,6 +57,15 @@ function hightlight(list, mark) {
         element.classList.add(`winner-${mark}`);
         element.firstElementChild.style.display = "initial";
     }); 
+}
+
+/** 
+ * Checks if the array has all truthy values, ie, if every place on the game board has a mark.
+ * @param  {array}    board - Game board represented as an array.
+ * @return {boolean}  Boolean value indicating whether the game has ended in a tie (true) or not (false).
+ */
+export function allAreTruthy(board) {
+    return board.every(element => element);
 }
 
 /** 
