@@ -5,7 +5,8 @@ import {
 
 import { 
     board, 
-    boardItems 
+    boardItems, 
+    preventButtonClicks
 } from "./board.js";
 
 import { 
@@ -93,6 +94,9 @@ export const game = {
         setDisplay(this.mark, "initial");
         this.setOutlineColor(mark[this.mark].color);
         this.runAi();
+        if(game.isComputer === true) {
+            preventButtonClicks();
+        }
     },
 
     runAi() {
@@ -106,8 +110,13 @@ export const game = {
                     game.switchMarks();
                     setDisplay(game.mark, "initial");
                     game.setOutlineColor(mark[game.mark].color);
+                    boardItems.forEach( (element) => {
+                        if (element.children.length === 2) {
+                            element.style.pointerEvents = "initial";
+                        }
+                    });
                 }
-            }, 200)
+            }, 500)
         }
     }
 }

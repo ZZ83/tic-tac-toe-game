@@ -11,10 +11,12 @@ import {
 
 import { game }                   from "./game.js";
 import { scores }                 from "./cpu.js";
-import { boardItems }             from "./board.js";
+import { boardItems, preventButtonClicks }             from "./board.js";
 import { outlineIcons }           from "./icons.js";
 import { setScoreHeaders }        from "./scores.js";
 import { renderRestartBetaModal } from "./modals.js";
+
+
 
 /** 
  * Listen for click event on `.mark-selection` using bubbling.
@@ -48,6 +50,9 @@ document.querySelector("#new-game-buttons").addEventListener("click", function (
         game.isComputer = true;
         player1.mark === "x" ? setScoreHeaders("you", "cpu") : setScoreHeaders("cpu", "you");
         game.runAi();
+        if(game.isComputer === true && player2.mark === "x") {
+            preventButtonClicks();
+        }
     }
     if (event.target.classList.contains("btn-new-game--player")) {
         toggleMenuScreen();

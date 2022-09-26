@@ -16,6 +16,8 @@ export const scores = {
     tie: 0,
 };
 
+console.log(board);
+
 // Bot move
 export const bestMove = () => {
     // AI to make its turn
@@ -121,7 +123,7 @@ const checkWinner = () => {
 
 
 
-
+console.log( bestMove() )
 
 
 
