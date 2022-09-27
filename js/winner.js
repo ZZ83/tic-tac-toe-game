@@ -65,7 +65,7 @@ function hightlight(list, mark) {
  * @return {boolean}  Boolean value indicating whether the game has ended in a tie (true) or not (false).
  */
 export function allAreTruthy(board) {
-    return board.every(element => element);
+    return board.every( element => typeof element === 'string');
 }
 
 /** 

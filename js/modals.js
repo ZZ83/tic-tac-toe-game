@@ -17,9 +17,9 @@ import {
     resetToInitialState, 
 } from "./game.js";
 
+import { player2 }          from "./players.js";
 import { resetScores }      from "./scores.js";
 import { currentTurnIcons } from "./icons.js";
-import { player2 } from "./players.js";
 
 const modal = document.querySelector(".modal");
 
@@ -90,12 +90,10 @@ export function renderTiedBetaModal() {
             resetBoard();
             game.switchWhosGoingFirst();
             game.runAi();
-
-
-            if(game.isComputer === true && player2.mark === "o" && game.mark === "o") {
+            if( game.isComputer === true && player2.mark === "x" && game.mark === "x" || 
+                game.isComputer === true && player2.mark === "o" && game.mark === "o") {
                 preventButtonClicks();
             }
-      
         }
     });
 }

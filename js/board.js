@@ -1,13 +1,11 @@
-import { game } from "./game.js";
 import { outlineIcons } from "./icons.js";
-
 
 export const boardItems = document.querySelectorAll(".game-board__item");
 
-export let board = [null, null, null,null, null, null, null, null, null];
+export let board = [0, 1, 2, 3, 4, 5, 6, 7, 8];
 
 export function resetBoard() {
-    board = [null, null, null,null, null, null,null, null, null];
+    board = [0, 1, 2, 3, 4, 5, 6, 7, 8];
     boardItems.forEach( (element) => {
         element.innerHTML = outlineIcons.x + outlineIcons.o;
         element.style.pointerEvents = "initial";

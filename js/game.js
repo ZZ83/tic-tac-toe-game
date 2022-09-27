@@ -4,12 +4,6 @@ import {
 } from "./players.js";
 
 import { 
-    board, 
-    boardItems, 
-    preventButtonClicks
-} from "./board.js";
-
-import { 
     mark,
     currentTurnIcons,
 } from "./icons.js";
@@ -19,8 +13,13 @@ import {
     highlightWinningBoxes 
 } from "./winner.js";
 
-import { scores }   from "./cpu.js";
-import { bestMove } from "./cpu.js";
+import { 
+    board, 
+    boardItems, 
+    preventButtonClicks
+} from "./board.js";
+
+import { minimax } from "./cpu.js";
 
 /** 
  * Sets the current players turn mark hover outline
@@ -44,8 +43,6 @@ export function resetToInitialState() {
         xMark.classList.remove("selected");
         xMark.nextElementSibling.classList.add("selected");
     }
-    scores.x = 10;
-    scores.o = -10;
     game.mark    = "x";
     player1.mark = "o";
     player2.mark = "x";
@@ -103,8 +100,9 @@ export const game = {
         if(game.isComputer === true && player2.mark === "x" && game.mark === "x" || game.isComputer === true && player2.mark === "o" && game.mark === "o") {
             setTimeout(() => {
                 if( !allAreTruthy(board) ) {
-                    boardItems[bestMove()].innerHTML = mark[player2.mark].svg;
-                    board.splice(bestMove(), 1, player2.mark);
+                    const bestMove = minimax(board, player2.mark).index;
+                    boardItems[bestMove].innerHTML = mark[player2.mark].svg;
+                    board.splice(bestMove, 1, player2.mark);
                     setDisplay(game.mark, "none");
                     highlightWinningBoxes(board);
                     game.switchMarks();
@@ -116,9 +114,10 @@ export const game = {
                         }
                     });
                 }
-            }, 500)
+            }, 200)
         }
     }
+
 }
 
 
