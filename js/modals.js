@@ -23,9 +23,13 @@ import { currentTurnIcons } from "./icons.js";
 
 const modal = document.querySelector(".modal");
 
-// Creates the alphaModal component /////////////////////////////// Appears when a player wins the round
+/** 
+ * Creates the winnerModal component which appear when a player wins.
+ * @param {object} icon - The template literal of the svg and the fill color.
+ * @param {string} message - Displays who won or lost.
+ */
 export function renderAplhaModal(icon, message) {
-    const alphaModal = `
+    const winnerModal = `
         <div class="alpha-modal">
             <h4 class="alpha-modal__sub-header">${message}</h4>
             <div class="alpha-modal__inner-wrapper">
@@ -38,10 +42,9 @@ export function renderAplhaModal(icon, message) {
             </div>
         </div>
     `;
-    modal.innerHTML = alphaModal;
-    // Listens for clicks on both left and right modal buttons
+    modal.innerHTML = winnerModal;
+    //**  Listens for clicks using bubbling on both quit and next round buttons. */
     document.querySelector(".button-wrapper").addEventListener("click", function (event) {
-        // Quit button
         if (event.target.classList.contains("btn-left")) {
             toggleOverlayModal();
             toggleGameScreen();
@@ -61,9 +64,11 @@ export function renderAplhaModal(icon, message) {
     });
 }
 
-// Creates the betaModal component /////////////////////////////// Appears when the game ends in a tie
+/** 
+ * Creates the tieModal component which appears when the game ends in a tie.
+ */
 export function renderTiedBetaModal() {
-    const betaModal = `
+    const tieModal = `
         <div class="beta-modal">
         <h1 class="beta-modal__text">round tied</h1>
         <div class="button-wrapper">
@@ -72,8 +77,8 @@ export function renderTiedBetaModal() {
         </div>
         </div>  
     `;
-    modal.innerHTML = betaModal;
-    // Listens for clicks on both left and right modal buttons
+    modal.innerHTML = tieModal;
+    //**  Listens for clicks using bubbling on both quit and next round buttons. */
     document.querySelector(".button-wrapper").addEventListener("click", function (event) {
         if (event.target.classList.contains("btn-left")) {
             toggleOverlayModal();
@@ -98,9 +103,11 @@ export function renderTiedBetaModal() {
     });
 }
 
-// Creates the betaModal component /////////////////////////////// Appears when the user click on the restart button
+/** 
+ * Creates the restartModal component which appears when the restart button is clicked.
+ */
 export function renderRestartBetaModal() {
-    const betaModal = `
+    const restartModal = `
         <div class="beta-modal">
         <h1 class="beta-modal__text">restart game?</h1>
         <div class="button-wrapper">
@@ -109,8 +116,8 @@ export function renderRestartBetaModal() {
         </div>
         </div>  
     `;
-    modal.innerHTML = betaModal;
-    // Listens for clicks on both left and right modal buttons
+    modal.innerHTML = restartModal;
+    //**  Listens for clicks using bubbling on both cancle and restart buttons. */
     document.querySelector(".button-wrapper").addEventListener("click", function (event) {
         if (event.target.classList.contains("btn-left")) {
             toggleOverlayModal();

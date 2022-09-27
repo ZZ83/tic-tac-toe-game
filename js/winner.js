@@ -24,7 +24,7 @@ import { boardItems }          from "./board.js";
 import { toggleOverlayModal }  from "./toggle.js";
 
 /** 
- * Displays the overlay alphaModal with the winning players information.
+ * Displays the overlay alphaModal with the players information.
  */
 function displayWinner() {
     if(player1.mark === game.mark) {
@@ -47,8 +47,8 @@ function displayWinner() {
 }
 
 /** 
- * Highlight the winning marks.
- * @param {array}  list - List of the winning game board items.
+ * Highlight the winning players marks.
+ * @param {array}  list - List of the winning game board divs.
  * @param {string} mark - The mark of the winning player.
  */
 function hightlight(list, mark) {
@@ -60,7 +60,7 @@ function hightlight(list, mark) {
 }
 
 /** 
- * Checks if the array has all truthy values, ie, if every place on the game board has a mark.
+ * Checks if all array items are strings, ie, if every place on the game board has a mark.
  * @param  {array}    board - Game board represented as an array.
  * @return {boolean}  Boolean value indicating whether the game has ended in a tie (true) or not (false).
  */
@@ -82,7 +82,7 @@ export function highlightWinningBoxes(board) {
     const slant1 = []; slant1.push(boardItems[0], boardItems[4], boardItems[8]);
     const slant2 = []; slant2.push(boardItems[2], boardItems[4], boardItems[6]);
     switch(true) {
-        /** Hightlight winning rows, columns, or slants for X mark. */
+        /** Hightlight winning rows, columns, or diagonals for X mark. */
         case board[0] === "x" && board[1] === "x" && board[2] === "x":
             hightlight(row1, "x");
             addToXsScore();
@@ -123,7 +123,7 @@ export function highlightWinningBoxes(board) {
             addToXsScore();
             displayWinner();
             break;
-        /** Hightlight winning rows, columns, or slants for O mark. */
+        /** Hightlight winning rows, columns, or diagonals for O mark. */
         case board[0] === "o" && board[1] === "o" && board[2] === "o":
             hightlight(row1, "o");
             addToOsScore();

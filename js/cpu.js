@@ -3,19 +3,20 @@ import {
     player2, 
 } from "./players.js";
 
-import { board } from "./board.js";
+const huPlayer = player1.mark;
+const aiPlayer = player2.mark;
 
-var huPlayer = player1.mark;
-var aiPlayer = player2.mark;
-
-
-
-// returns list of the indexes of empty spots on the board
+/** 
+ * Returns list of the indexes of empty spots on the board
+ * @param  {array}  board - Game board represented as an array.
+ */
 function emptyIndexies(board) {
     return board.filter(item => item != "o" && item != "x");
 }
 
-// winning combinations using the board indexies
+/** 
+ * Winning combinations using the board indexies
+ */
 function winning(board, player){
     if (
         (board[0] == player && board[1] == player && board[2] == player) ||
@@ -33,11 +34,14 @@ function winning(board, player){
     }
 }
 
-// the main minimax function
+/** 
+ * Minimax algorithm
+ * @param {array}   board - Game board represented as an array.
+ * @param {string}  player - The players mark
+ */
 export function minimax(newBoard, player) {
     //available spots
     var availSpots = emptyIndexies(newBoard);
-
     // checks for the terminal states such as win, lose, and tie 
     // and returning a value accordingly
     if (winning(newBoard, huPlayer)){
@@ -49,20 +53,15 @@ export function minimax(newBoard, player) {
     else if (availSpots.length === 0){
         return {score: 0};
     }
-
-
     // an array to collect all the objects
     var moves = [];
-
     // loop through available spots
     for (var i = 0; i < availSpots.length; i++) {
         //create an object for each and store the index of that spot 
         var move = {};
             move.index = newBoard[availSpots[i]];
-
         // set the empty spot to the current player
         newBoard[availSpots[i]] = player;
-
         /*collect the score resulted from calling minimax on the opponent of the current player*/
         if (player == aiPlayer){
             var result = minimax(newBoard, huPlayer);
@@ -72,14 +71,11 @@ export function minimax(newBoard, player) {
             var result = minimax(newBoard, aiPlayer);
             move.score = result.score;
         }
-
         // reset the spot to empty
         newBoard[availSpots[i]] = move.index;
-
         // push the object to the array
         moves.push(move);
     }
-
     // if it is the computer's turn loop over the moves and choose the move with the highest score
     var bestMove;
     if(player === aiPlayer) {
@@ -100,7 +96,6 @@ export function minimax(newBoard, player) {
             }
         }
     }
-
     // return the chosen move (object) from the moves array
     return moves[bestMove];
 }
