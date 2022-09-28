@@ -27,12 +27,16 @@ document.querySelector(".mark-selection").addEventListener("click", function (ev
         player1.mark = "x";
         player2.mark = "o";
         event.target.classList.add("selected");
+        event.target.classList.remove("mark-hover");
+        event.target.nextElementSibling.classList.add("mark-hover");
         event.target.nextElementSibling.classList.remove("selected");
     }
     if (event.target.classList.contains("mark-selection__o")) {
         player1.mark = "o";
         player2.mark = "x";
         event.target.classList.add("selected");
+        event.target.classList.remove("mark-hover");
+        event.target.previousElementSibling.classList.add("mark-hover");
         event.target.previousElementSibling.classList.remove("selected");
     }
 });

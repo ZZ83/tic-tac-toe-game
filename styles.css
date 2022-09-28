@@ -560,6 +560,10 @@ path {
   fill: #1A2A33;
 }
 
+.mark-hover:hover {
+  background-color: #21313b;
+}
+
 .current-turn {
   fill: #A8BFC9;
   font-weight: 700;

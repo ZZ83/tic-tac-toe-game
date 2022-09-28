@@ -40,3 +40,9 @@
     fill: $dark-navy;
     @extend %bg-silver;
 }
+
+.mark-hover {
+    &:hover {
+        background-color: #21313b;
+    }
+}
