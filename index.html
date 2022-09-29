@@ -12,37 +12,37 @@
 		<title>Frontend Mentor | Tic Tac Toe</title>
 	</head>
 	<body>
-		<!-- New game menu start -->
-		<div class="new-game wrapper">
-			<!-- Menu header -->
-			<header class="menu-header">
-				<!-- Logo -->
-				<div class="logo">
-					<svg class="logo__x" width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M27.68 1.635a3 3 0 0 0-4.242 0L16 9.073 8.562 1.635a3 3 0 0 0-4.243 0L1.634 4.319a3 3 0 0 0 0 4.243L9.073 16l-7.439 7.44a3 3 0 0 0 0 4.242l2.685 2.685a3 3 0 0 0 4.243 0L16 22.927l7.438 7.439a3 3 0 0 0 4.243 0l2.685-2.685a3 3 0 0 0 0-4.242L22.927 16l7.439-7.438a3 3 0 0 0 0-4.243L27.68 1.635Z" fill="#31C3BD"/></svg>
-					<svg class="logo__o" width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M31.97 15.87C31.97 7.107 24.865 0 16.1 0 7.335 0 .229 7.106.229 15.87c0 8.766 7.106 15.871 15.87 15.871 8.766 0 15.871-7.105 15.871-15.87Zm-22.336 0a6.466 6.466 0 1 1 12.931 0 6.466 6.466 0 0 1-12.931 0Z" fill="#F2B137"/></svg>
-				</div>
-			</header> 
-			<!-- Mark selection -->
-			<div class="mark-selection">
-				<h4 class="mark-selection__heading">Pick player 1's mark</h4>
-				<div class="mark-selection__inner">
-					<div class="mark-selection__x mark-hover">
-						<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M27.68 1.635a3 3 0 0 0-4.242 0L16 9.073 8.562 1.635a3 3 0 0 0-4.243 0L1.634 4.319a3 3 0 0 0 0 4.243L9.073 16l-7.439 7.44a3 3 0 0 0 0 4.242l2.685 2.685a3 3 0 0 0 4.243 0L16 22.927l7.438 7.439a3 3 0 0 0 4.243 0l2.685-2.685a3 3 0 0 0 0-4.242L22.927 16l7.439-7.438a3 3 0 0 0 0-4.243L27.68 1.635Z"/></svg>
-					</div>
-					<div class="mark-selection__o selected">
-						<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M31.97 15.87C31.97 7.107 24.865 0 16.1 0 7.335 0 .229 7.106.229 15.87c0 8.766 7.106 15.871 15.87 15.871 8.766 0 15.871-7.105 15.871-15.87Zm-22.336 0a6.466 6.466 0 1 1 12.931 0 6.466 6.466 0 0 1-12.931 0Z"/></svg>
-					</div>
-				</div>
-				<p class="mark-selection__sub-heading">Remember: X goes first</p>
-			</div> 
-			<!-- New game vs cpu or player buttons -->
-			<div id="new-game-buttons">
-				<button class="btn-new-game btn-new-game--cpu btn-yellow" aria-label="New game vs CPU">New Game (vs CPU)</button>
-				<button class="btn-new-game btn-new-game--player btn-blue" aria-label="New game vs player">New Game (vs player)</button>
-			</div>
-		</div> <!-- New game menu end -->
-		<!-- Game -->
 		<main>
+			<!-- New game menu start -->
+			<div class="new-game wrapper">
+				<!-- Menu header -->
+				<header class="menu-header">
+					<!-- Logo -->
+					<div class="logo">
+						<svg class="logo__x" width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M27.68 1.635a3 3 0 0 0-4.242 0L16 9.073 8.562 1.635a3 3 0 0 0-4.243 0L1.634 4.319a3 3 0 0 0 0 4.243L9.073 16l-7.439 7.44a3 3 0 0 0 0 4.242l2.685 2.685a3 3 0 0 0 4.243 0L16 22.927l7.438 7.439a3 3 0 0 0 4.243 0l2.685-2.685a3 3 0 0 0 0-4.242L22.927 16l7.439-7.438a3 3 0 0 0 0-4.243L27.68 1.635Z" fill="#31C3BD"/></svg>
+						<svg class="logo__o" width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M31.97 15.87C31.97 7.107 24.865 0 16.1 0 7.335 0 .229 7.106.229 15.87c0 8.766 7.106 15.871 15.87 15.871 8.766 0 15.871-7.105 15.871-15.87Zm-22.336 0a6.466 6.466 0 1 1 12.931 0 6.466 6.466 0 0 1-12.931 0Z" fill="#F2B137"/></svg>
+					</div>
+				</header> 
+				<!-- Mark selection -->
+				<div class="mark-selection">
+					<h4 class="mark-selection__heading">Pick player 1's mark</h4>
+					<div class="mark-selection__inner">
+						<div class="mark-selection__x mark-hover">
+							<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M27.68 1.635a3 3 0 0 0-4.242 0L16 9.073 8.562 1.635a3 3 0 0 0-4.243 0L1.634 4.319a3 3 0 0 0 0 4.243L9.073 16l-7.439 7.44a3 3 0 0 0 0 4.242l2.685 2.685a3 3 0 0 0 4.243 0L16 22.927l7.438 7.439a3 3 0 0 0 4.243 0l2.685-2.685a3 3 0 0 0 0-4.242L22.927 16l7.439-7.438a3 3 0 0 0 0-4.243L27.68 1.635Z"/></svg>
+						</div>
+						<div class="mark-selection__o selected">
+							<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M31.97 15.87C31.97 7.107 24.865 0 16.1 0 7.335 0 .229 7.106.229 15.87c0 8.766 7.106 15.871 15.87 15.871 8.766 0 15.871-7.105 15.871-15.87Zm-22.336 0a6.466 6.466 0 1 1 12.931 0 6.466 6.466 0 0 1-12.931 0Z"/></svg>
+						</div>
+					</div>
+					<p class="mark-selection__sub-heading">Remember: X goes first</p>
+				</div> 
+				<!-- New game vs cpu or player buttons -->
+				<div id="new-game-buttons">
+					<button class="btn-new-game btn-new-game--cpu btn-yellow" aria-label="New game vs CPU">New Game (vs CPU)</button>
+					<button class="btn-new-game btn-new-game--player btn-blue" aria-label="New game vs player">New Game (vs player)</button>
+				</div>
+			</div> <!-- New game menu end -->
+			<!-- Game -->
 			<div class="game wrapper" style="display: none;">
 				<!-- Game header -->
 				<header class="game-header">
