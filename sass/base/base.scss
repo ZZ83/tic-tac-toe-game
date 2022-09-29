@@ -27,14 +27,12 @@ h1 {
 }
 
 h2 {
-    @extend %text-m;
-}
-
-h4 {
     @extend %text-xs;
 }
 
-
+h3 {
+    @extend %text-m; 
+}
 
 p {
     @extend %text-body; 

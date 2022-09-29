@@ -31,7 +31,7 @@ const modal = document.querySelector(".modal");
 export function renderAplhaModal(icon, message) {
     const winnerModal = `
         <div class="alpha-modal">
-            <h4 class="alpha-modal__sub-header">${message}</h4>
+            <h2 class="alpha-modal__sub-header">${message}</h2>
             <div class="alpha-modal__inner-wrapper">
                 ${icon.svg}
                 <h1 style="color: ${icon.fill};">Takes the round</h1>
